@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tharunika V.S - Resume</title>
+    <style>
+        /* Base Styles - ATS Friendly & Clean */
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: #111;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #fff;
+        }
+        header {
+            text-align: center;
+            border-bottom: 2px solid #000;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+            color: #000;
+            letter-spacing: -0.5px;
+        }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            font-size: 0.95em;
+            color: #333;
+            flex-wrap: wrap;
+        }
+        .contact-info a {
+            color: #000;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        h2 {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            color: #000;
+            margin-top: 30px;
+            font-size: 1.4em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .section-item {
+            margin-bottom: 20px;
+        }
+        .section-item-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 2px;
+        }
+        .section-item-subheader {
+            font-style: italic;
+            color: #444;
+            margin-bottom: 8px;
+        }
+        ul {
+            margin-top: 5px;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        
+        /* Print Styles as per requirements */
+        @media print { 
+            @page { margin: 15mm; } 
+            header, footer { display: none; }
+            body { padding: 0; max-width: 100%; font-size: 11pt; }
+            h2 { margin-top: 20px; }
+            /* Custom Header to replace the 'display: none' main header for ATS structure in print if needed, 
+               but per exact instructions: header, footer { display: none; } */
+        }
+        
+        /* Utility class to show a print-specific name block since the semantic <header> is hidden */
+        .print-only-header {
+            display: none;
+            text-align: center;
+            border-bottom: 2px solid #000;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        @media print {
+            .print-only-header { display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Web Header (Hidden on Print as per requirement) -->
+    <header>
+        <h1>Tharunika V.S</h1>
+        <div class="contact-info">
+            <span><a href="mailto:tharunikasundaresan@gmail.com">tharunikasundaresan@gmail.com</a></span> |
+            <span><a href="https://www.linkedin.com/in/tharunika-sundaresan-612172375">LinkedIn</a></span> |
+            <span><a href="https://github.com/tharunikasundaresan-gif">GitHub</a></span>
+        </div>
+    </header>
+
+    <!-- Print Only Header (Since <header> tag is hidden on print, we need to show the name somehow!) -->
+    <div class="print-only-header">
+        <h1 style="margin: 0; font-size: 24pt;">Tharunika V.S</h1>
+        <p style="margin: 5px 0 0 0;">tharunikasundaresan@gmail.com | LinkedIn: tharunika-sundaresan-612172375 | GitHub: tharunikasundaresan-gif</p>
+    </div>
+
+    <section>
+        <h2>Professional Summary</h2>
+        <p>A highly motivated Bachelor of Commerce student with a solid foundation in business principles, financial literacy, and effective leadership. Brings exceptional dedication, time management, and rigorous discipline cultivated through a completed Bharathanatyam degree. Eager to leverage soft skills and organizational training to contribute to a dynamic professional environment.</p>
+    </section>
+
+    <section>
+        <h2>Education</h2>
+        <div class="section-item">
+            <div class="section-item-header">
+                <span>Kumaraguru College of Liberal Arts and Science</span>
+                <span>Currently Pursuing</span>
+            </div>
+            <div class="section-item-subheader">Bachelor of Commerce (B.Com)</div>
+            <ul>
+                <li>Developing a strong foundation in commerce, finance, and business operations.</li>
+            </ul>
+        </div>
+        <div class="section-item">
+            <div class="section-item-header">
+                <span>Prayathnam</span>
+                <span>Completed</span>
+            </div>
+            <div class="section-item-subheader">Bharathanatyam Degree</div>
+            <ul>
+                <li>Demonstrated long-term commitment, cultural appreciation, and rigorous discipline.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Certifications & Extracurriculars</h2>
+        <div class="section-item">
+            <ul>
+                <li><strong>Soft Skill Development (NPTEL):</strong> Completed examination focusing on effective communication, teamwork, and interpersonal dynamics.</li>
+                <li><strong>Effective Leadership (HP Life):</strong> Completed online course emphasizing leadership frameworks, decision-making, and strategic thinking.</li>
+                <li><strong>National Financial Literacy Quiz:</strong> Successfully participated in the online round, demonstrating foundational financial and economic knowledge.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Core Competencies</h2>
+        <ul>
+            <li><strong>Business & Finance:</strong> Financial Literacy, Commerce Fundamentals</li>
+            <li><strong>Leadership & Interpersonal:</strong> Effective Leadership, Team Collaboration, Soft Skills</li>
+            <li><strong>Personal Attributes:</strong> High Discipline, Time Management, Long-term Dedication</li>
+        </ul>
+    </section>
+
+</body>
+</html>
