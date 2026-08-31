@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 0: A Week of Learning, Connecting and Creating | Tharunika V.S - PRICE ProtoSem</title>
+    
+    <!-- Tailwind CSS (Vanilla CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#000000',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { 
+            font-family: 'Inter', system-ui, sans-serif; 
+            background-color: #f8fafc; 
+            color: #0f172a; 
+        }
+        .bento-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .bento-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05);
+        }
+        nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .day-badge {
+            background: #000;
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body class="relative min-h-screen p-4 md:p-8 lg:p-12 overflow-x-hidden pt-24 md:pt-28">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 px-6 py-4 shadow-sm border-b border-gray-100 transition-all">
+        <div class="max-w-5xl mx-auto flex items-center justify-between">
+            <a href="index.html" class="text-base font-bold text-black flex items-center gap-2 hover:opacity-80 transition-opacity">
+                <span>←</span> Back to Portfolio
+            </a>
+            <div class="flex items-center gap-4 text-sm font-semibold text-gray-600">
+                <a href="index.html#protosem" class="hover:text-black transition-colors">ProtoSem Timeline</a>
+                <a href="index.html#blog" class="hover:text-black transition-colors">Blog</a>
+                <a href="index.html#contact" class="hover:text-black transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Glowing Gradient Blob -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+        <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-black/10 blur-[100px]"></div>
+        <div class="absolute top-1/2 -right-32 w-[30rem] h-[30rem] rounded-full bg-gray-400/20 blur-[120px]"></div>
+    </div>
+
+    <main class="max-w-4xl mx-auto mt-4 pb-16">
+        
+        <!-- Header Banner -->
+        <header class="mb-10 text-center md:text-left">
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-3 mb-4">
+                <span class="day-badge">Phase 01</span>
+                <span class="bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                    Completed
+                </span>
+                <span class="text-sm font-semibold text-gray-400">Week 00 of 20</span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-black tracking-tight mb-4">
+                A Week of Learning, Connecting and Creating – My Protosem Journey
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 leading-relaxed">
+                The first week of Protosem was an exciting blend of learning, teamwork, self-discovery and new experiences. From getting to know our peers to meeting inspiring entrepreneurs, every day brought something different and helped us step out of our comfort zones.
+            </p>
+        </header>
+
+        <!-- Daily Logs Timeline Cards with Exact Narrative -->
+        <div class="space-y-6">
+            
+            <!-- Day 1 -->
+            <article class="bento-card relative">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-4 pb-3 border-b border-gray-100">
+                    <div class="flex items-center gap-3">
+                        <span class="day-badge">Day 1</span>
+                        <h2 class="text-xl md:text-2xl font-bold text-black">Breaking the Ice</h2>
+                    </div>
+                    <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Onboarding</span>
+                </div>
+                <div class="text-gray-700 leading-relaxed text-base space-y-4">
+                    <p>
+                        We began our Protosem journey with an icebreaking session through a fun game of Stone Paper Scissors. It was a simple activity, but it gave us the opportunity to interact with almost everyone and helped us feel more comfortable with the group.
+                    </p>
+                    <p>
+                        We then introduced ourselves and shared the things we were good at. This helped us understand each other's interests, talents and personalities. Later, we went on a Forge tour, where we got familiarised with the environment, facilities and the space where many of our upcoming activities would take place.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Day 2 -->
+            <article class="bento-card relative">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-4 pb-3 border-b border-gray-100">
+                    <div class="flex items-center gap-3">
+                        <span class="day-badge">Day 2</span>
+                        <h2 class="text-xl md:text-2xl font-bold text-black">Understanding Ourselves</h2>
+                    </div>
+                    <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Self-Discovery</span>
+                </div>
+                <div class="text-gray-700 leading-relaxed text-base space-y-4">
+                    <p>
+                        The second day focused more on self-awareness. We took the 16 Personalities Test, which helped us understand our personality traits and characteristics better.
+                    </p>
+                    <p>
+                        We were then asked to find a story on Zen Pencil that matched our personality. Each of us presented our chosen story and explained why we felt it reflected our character. It was interesting to see how the same activity could bring out different perspectives and interpretations from each person.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Day 3 -->
+            <article class="bento-card relative">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-4 pb-3 border-b border-gray-100">
+                    <div class="flex items-center gap-3">
+                        <span class="day-badge">Day 3</span>
+                        <h2 class="text-xl md:text-2xl font-bold text-black">Teamwork and Professional Growth</h2>
+                    </div>
+                    <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Team Dynamics</span>
+                </div>
+                <div class="text-gray-700 leading-relaxed text-base space-y-4">
+                    <p>
+                        Day three was all about team building and collaboration. We formed our Beta teams and participated in activities such as Among Us and the Marshmallow Challenge. These activities encouraged us to communicate, think creatively and work together as a team.
+                    </p>
+                    <p>
+                        We also had a LinkedIn session, where we learned how to create and develop our professional profiles. The session gave us an idea of how we can start building our professional identity and network even as students.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Day 4 -->
+            <article class="bento-card relative">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-4 pb-3 border-b border-gray-100">
+                    <div class="flex items-center gap-3">
+                        <span class="day-badge">Day 4</span>
+                        <h2 class="text-xl md:text-2xl font-bold text-black">Getting Ready for the Journey Ahead</h2>
+                    </div>
+                    <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Orientation & Launch</span>
+                </div>
+                <div class="text-gray-700 leading-relaxed text-base space-y-4">
+                    <p>
+                        On the fourth day, we were once again familiarised with the rules and guidelines of Forge. We were also introduced to the leaderboard system and understood how it worked.
+                    </p>
+                    <p>
+                        The highlight of the day was our launch event, where Mr. Kumar Rajagopalan, CEO of the Retailers Association of India, delivered an inspiring speech. His insights and experiences gave us a fresh perspective and motivated us to make the most of the opportunities provided through Protosem.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Day 5 -->
+            <article class="bento-card relative">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-4 pb-3 border-b border-gray-100">
+                    <div class="flex items-center gap-3">
+                        <span class="day-badge">Day 5</span>
+                        <h2 class="text-xl md:text-2xl font-bold text-black">Learning from Entrepreneurs</h2>
+                    </div>
+                    <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Entrepreneurship</span>
+                </div>
+                <div class="text-gray-700 leading-relaxed text-base space-y-4">
+                    <p>
+                        The fifth day was an opportunity to learn directly from entrepreneurs. We had a Young Entrepreneurship Programme session with the founder of Thulasi Pharmacy, who shared his inspiring life journey, challenges and experiences as an entrepreneur.
+                    </p>
+                    <p>
+                        We also interacted with the founder of A Toddler Thing, who is a graduate of our college. Listening to his entrepreneurial journey was especially inspiring because it showed us how someone from our own college community had turned an idea into a venture.
+                    </p>
+                    <p>
+                        Later that afternoon, we presented our experiences from the first week of Protosem. We shared photographs, memorable moments and highlights from the different activities and sessions we had participated in throughout the week.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Looking Back at Week One -->
+            <article class="bento-card bg-black text-white border-none relative mt-8">
+                <div class="flex items-center gap-3 mb-4 pb-3 border-b border-gray-800">
+                    <span class="bg-white text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Retrospective</span>
+                    <h2 class="text-xl md:text-2xl font-bold text-white">Looking Back at Week One</h2>
+                </div>
+                <div class="text-gray-300 leading-relaxed text-base space-y-4">
+                    <p>
+                        The first week of Protosem was much more than just a series of activities. It gave us opportunities to understand ourselves, connect with others, develop teamwork, build professional skills and learn from real-life entrepreneurs.
+                    </p>
+                    <p>
+                        Every day brought a new lesson and a new experience. From the first icebreaking game to our final presentation, the week helped us become more confident, collaborative and open to new possibilities.
+                    </p>
+                    <p class="font-semibold text-white">
+                        Week One was just the beginning, but it already gave us memories, connections and lessons that we can carry forward throughout our Protosem journey.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Back to Top / Navigation Footer -->
+        <div class="mt-12 text-center">
+            <a href="index.html#protosem" class="inline-flex items-center gap-2 px-6 py-3 bg-black text-white rounded-full font-semibold text-sm hover:bg-gray-800 transition-colors shadow-sm">
+                <span>←</span> Back to ProtoSem Timeline
+            </a>
+        </div>
+
+    </main>
+
+    <footer class="text-center text-gray-400 text-sm py-8 border-t border-gray-100 max-w-4xl mx-auto">
+        Tharunika V.S • ProtoSem Learning Journal
+    </footer>
+
+</body>
+</html>
