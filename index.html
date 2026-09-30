@@ -3,883 +3,832 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tharunika V.S | Portfolio</title>
-    
-    <!-- Tailwind CSS (Vanilla CDN) -->
+    <title>Tharunika V.S — Creative Pastel Editorial Portfolio</title>
+    <meta name="description" content="Creative, modern, editorial-style pastel portfolio of Tharunika V.S — B.Com Student, Innovation Engineer Trainee at PRICE ProtoSem, and Classical Bharathanatyam Artist.">
+
+    <!-- Tailwind CSS (Utility classes) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        accent: '#000000', /* Primary Accent: Black */
+                        cream: '#FFF9F2',
+                        ivory: '#FFFCF7',
+                        charcoal: '#252329',
+                        lavender: '#C9B8FF',
+                        pink: '#F3B6C8',
+                        blue: '#B8DDF5',
+                        mint: '#BFE8D0',
+                        yellow: '#F8E7A6',
+                        peach: '#F6C4A8',
+                    },
+                    fontFamily: {
+                        display: ['"Space Grotesk"', 'sans-serif'],
+                        heading: ['"DM Sans"', 'sans-serif'],
+                        body: ['"Inter"', '"DM Sans"', 'sans-serif'],
+                        handwriting: ['"Caveat"', 'cursive'],
                     }
                 }
             }
         }
     </script>
-    
-    <style>
-        body { 
-            font-family: 'Inter', system-ui, sans-serif; 
-            background-color: #f8fafc; 
-            color: #0f172a; 
-        }
-        /* Bento Grid Card Styles */
-        .bento-card {
-            background: white;
-            border-radius: 1.5rem;
-            padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
-            border: 1px solid #e2e8f0;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .bento-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05);
-        }
-        /* Navigation Styles */
-        nav {
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-        /* ProtoSem Timeline Styles */
-        .timeline-container { position: relative; }
-        .timeline-line {
-            position: absolute;
-            left: 24px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: #e2e8f0;
-            z-index: 0;
-        }
-        @media (min-width: 768px) {
-            .timeline-line {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-        }
-        .week-card {
-            position: relative;
-            z-index: 1;
-            transition: all 0.3s ease;
-        }
-        .week-card:hover {
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-            border-color: #000;
-        }
-        .domain-tag {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            padding: 0.5rem 1rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: #334155;
-            transition: all 0.2s;
-        }
-        .domain-tag:hover {
-            border-color: #000;
-            color: #000;
-        }
-        .phase-btn.active {
-            background: #000;
-            color: #fff;
-            border-color: #000;
-        }
-        .progress-line {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: relative;
-        }
-        .progress-line::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: #e2e8f0;
-            z-index: 0;
-        }
-        .progress-node {
-            position: relative;
-            z-index: 1;
-            background: #fff;
-            padding: 0 10px;
-            font-weight: bold;
-            color: #94a3b8;
-        }
-        .day-badge {
-            background: #000;
-            color: #fff;
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-    </style>
+
+    <!-- Custom Pastel Editorial Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="relative min-h-screen p-4 md:p-8 lg:p-12 overflow-x-hidden pt-24 md:pt-28">
-    
-    <!-- Primary Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 px-6 py-4 shadow-sm border-b border-gray-100 transition-all">
-        <div class="max-w-5xl mx-auto flex flex-wrap justify-center gap-4 md:gap-6 text-sm font-semibold text-gray-600">
-            <a href="#about" class="hover:text-black transition-colors">About</a>
-            <a href="#experience" class="hover:text-black transition-colors">Experience</a>
-            <a href="#protosem" class="hover:text-black transition-colors text-black font-bold">ProtoSem</a>
-            <a href="#week0" class="hover:text-black transition-colors">Week 0</a>
-            <a href="#week1" class="hover:text-black transition-colors">Week 1</a>
-            <a href="#week2" class="hover:text-black transition-colors">Week 2</a>
-            <a href="#week3" class="hover:text-black transition-colors">Week 3</a>
-            <a href="#blog" class="hover:text-black transition-colors">Blog</a>
-            <a href="#projects" class="hover:text-black transition-colors">Projects</a>
-            <a href="#certifications" class="hover:text-black transition-colors">Certifications</a>
-            <a href="#education" class="hover:text-black transition-colors">Education</a>
-            <a href="#contact" class="hover:text-black transition-colors">Contact</a>
-        </div>
-    </nav>
+<body class="bg-[#FFF9F2] text-[#252329] pt-24 md:pt-32 pb-16 px-4 sm:px-6 md:px-10 lg:px-16 overflow-x-hidden">
 
-    <!-- Glowing Gradient Blob (Black Accent) -->
-    <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
-        <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-black/10 blur-[100px]"></div>
-        <div class="absolute top-1/2 -right-32 w-[30rem] h-[30rem] rounded-full bg-gray-400/20 blur-[120px]"></div>
-    </div>
+    <!-- ==========================================
+         MINIMAL STICKY NAVBAR
+         ========================================== -->
+    <header class="editorial-nav-wrapper">
+        <nav class="editorial-nav-container">
+            <a href="#about" class="nav-brand-pill">
+                <span class="doodle-accent">✦</span> Tharunika V.S
+            </a>
+            <a href="#about" class="editorial-nav-link active">About</a>
+            <a href="#skills" class="editorial-nav-link">Skills</a>
+            <a href="#projects" class="editorial-nav-link">Projects</a>
+            <a href="#protosem" class="editorial-nav-link">ProtoSem</a>
+            <a href="#blog" class="editorial-nav-link">Journal</a>
+            <a href="#experience" class="editorial-nav-link">Timeline</a>
+            <a href="#contact" class="editorial-nav-link">Contact</a>
+            <a href="resume.html" class="nav-resume-cta">Resume ↗</a>
+        </nav>
+    </header>
 
-    <div class="max-w-5xl mx-auto mt-8">
-        
-        <section id="experience" class="scroll-mt-28">
-        <!-- Bento Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(200px,auto)]">
+    <!-- Main Container -->
+    <main class="max-w-6xl mx-auto space-y-28 md:space-y-36">
+
+        <!-- ==========================================
+             HERO SECTION (Asymmetric Editorial Composition)
+             ========================================== -->
+        <section id="hero" class="relative pt-6 md:pt-12 pb-10">
             
-            <!-- Profile / Hero Card (Spans 2 columns) -->
-            <div class="bento-card md:col-span-2 flex flex-col md:flex-row items-center md:items-start gap-8">
-                <div class="text-center md:text-left">
-                    <h1 class="text-4xl md:text-5xl font-bold text-accent mb-3 tracking-tight">Hi, I'm Tharunika.</h1>
-                    <p class="text-xl text-gray-600 mb-4 font-medium">B.Com Student & Aspiring Leader</p>
-                    <p class="text-gray-500 leading-relaxed max-w-lg">
-                        I am currently pursuing a Bachelor of Commerce degree at Kumaraguru College of Liberal Arts and Science. I bring together a passion for business, leadership, and soft skills with the rigorous discipline I've cultivated through my Bharathanatyam degree.
+            <!-- Layered Pastel Decorative Shapes Behind Content -->
+            <div class="deco-shape floating-object bg-[#C9B8FF]/45 w-44 h-44 -top-8 -left-10 blur-xl"></div>
+            <div class="deco-shape floating-object-delayed bg-[#F3B6C8]/45 w-56 h-56 top-1/4 -right-12 blur-2xl"></div>
+            <div class="deco-shape floating-object bg-[#B8DDF5]/50 w-52 h-52 -bottom-10 left-1/3 blur-2xl"></div>
+            <div class="deco-shape bg-[#F8E7A6]/60 w-24 h-24 top-10 right-1/4 rounded-full blur-lg"></div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                
+                <!-- Hero Left: Typography & Bio (Spans 8 cols) -->
+                <div class="lg:col-span-8 space-y-6">
+                    
+                    <div class="reveal-fade-up inline-flex items-center gap-2">
+                        <span class="section-heading-tag">
+                            <span class="doodle-accent doodle-sparkle">✦</span> Portfolio Edition 2026
+                        </span>
+                        <span class="skill-tag tag-mint !py-1 !px-3 !text-xs hidden sm:inline-flex">
+                            ● Available for Innovation & Commerce Roles
+                        </span>
+                    </div>
+
+                    <div class="reveal-fade-up reveal-delay-1 space-y-1">
+                        <p class="font-display font-bold text-sm sm:text-base uppercase tracking-[0.25em] text-slate-500">
+                            Hello, I'm
+                        </p>
+                        <h1 class="font-display font-extrabold text-5xl sm:text-7xl md:text-8xl tracking-tight leading-[0.95] text-[#252329]">
+                            THARUNIKA<br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#6445B8] via-[#A83655] to-[#1F699A]">SUNDARESAN</span>
+                        </h1>
+                    </div>
+
+                    <p class="reveal-fade-up reveal-delay-2 text-xl sm:text-2xl text-[#66616B] font-medium max-w-2xl leading-relaxed">
+                        <span class="text-[#252329] font-bold">B.Com Student</span> & <span class="text-[#6445B8] font-bold">Aspiring Leader</span> • Innovation Engineer Trainee bridging commerce, strategic decision-making, and classical cultural discipline.
+                    </p>
+
+                    <div class="reveal-fade-up reveal-delay-3 flex flex-wrap items-center gap-4 pt-4">
+                        <a href="#projects" class="btn-editorial-primary">
+                            <span>View Projects & ProtoSem</span>
+                            <span>↓</span>
+                        </a>
+                        <a href="#about" class="btn-editorial-secondary">
+                            <span>About My Journey</span>
+                        </a>
+                        <a href="resume.html" class="skill-tag tag-lavender !py-3 !px-5 !text-sm font-bold">
+                            <span>📄 ATS Resume ↗</span>
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Hero Right: Scrapbook Highlight Card (Spans 4 cols) -->
+                <div class="lg:col-span-4 relative reveal-fade-up reveal-delay-4">
+                    
+                    <!-- Decorative Sticker Tape -->
+                    <div class="sticker-tape">★ Fellowship Trainee</div>
+
+                    <div class="pastel-card card-lavender p-7 space-y-5 transform lg:rotate-1 hover:rotate-0 transition-transform">
+                        <div class="flex items-center justify-between pb-3 border-b border-purple-200/80">
+                            <span class="font-display font-bold text-xs uppercase tracking-wider text-[#6445B8]">Quick Profile</span>
+                            <span class="font-handwriting text-lg text-slate-600">@tharunika</span>
+                        </div>
+
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-start gap-3">
+                                <span class="text-base">🎓</span>
+                                <div>
+                                    <strong class="text-[#252329] block">B.Com Degree</strong>
+                                    <span class="text-xs text-[#66616B]">Kumaraguru College of Liberal Arts and Science</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-base">🎭</span>
+                                <div>
+                                    <strong class="text-[#252329] block">Bharathanatyam Degree</strong>
+                                    <span class="text-xs text-[#66616B]">Prayathnam Graduate</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-base">⚡</span>
+                                <div>
+                                    <strong class="text-[#252329] block">PRICE ProtoSem</strong>
+                                    <span class="text-xs text-[#66616B]">20-Week Innovation Programme</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-3 border-t border-purple-200/80 flex items-center justify-between text-xs font-bold text-[#6445B8]">
+                            <button onclick="copyEmailToClipboard()" class="hover:underline flex items-center gap-1">
+                                <span>📋 Copy Email</span>
+                            </button>
+                            <a href="#contact" class="hover:underline">Let's Connect →</a>
+                        </div>
+                    </div>
+
+                    <!-- Small Pastel Stamp Accent -->
+                    <div class="absolute -bottom-6 -left-6 bg-[#F8E7A6] border border-black/15 px-3 py-1.5 rounded-xl shadow-xs font-handwriting text-base text-[#8C7518] transform -rotate-6 hidden sm:block">
+                        ✦ Passion for Leadership & Arts!
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             ABOUT SECTION (Asymmetric Editorial Layout)
+             ========================================== -->
+        <section id="about" class="scroll-mt-28 relative">
+            <a id="experience-anchor"></a>
+            
+            <div class="flex items-baseline justify-between mb-8 pb-4 border-b border-black/10">
+                <div class="flex items-center gap-3">
+                    <span class="section-number">01</span>
+                    <div>
+                        <span class="section-heading-tag">Background & Identity</span>
+                        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-[#252329] mt-1">About Me</h2>
+                    </div>
+                </div>
+                <span class="font-handwriting text-xl text-slate-500 hidden md:block">Driven by curiosity & discipline ❋</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                
+                <!-- About Main Story (Spans 7 cols) -->
+                <div class="md:col-span-7 space-y-6">
+                    <div class="pastel-card card-ivory p-8 sm:p-10 space-y-4">
+                        <h3 class="font-display font-bold text-2xl text-[#252329]">
+                            Blending Business Acumen with the Rigor of Classical Art.
+                        </h3>
+                        <p class="text-base sm:text-lg text-[#66616B] leading-relaxed">
+                            I am currently pursuing a <strong class="text-[#252329]">Bachelor of Commerce degree at Kumaraguru College of Liberal Arts and Science</strong>. I bring together a deep passion for business strategy, leadership, and soft skills with the rigorous discipline I've cultivated through my completed <strong class="text-[#252329]">Bharathanatyam degree from Prayathnam</strong>.
+                        </p>
+                        <p class="text-base sm:text-lg text-[#66616B] leading-relaxed">
+                            Through the <strong class="text-[#252329]">PRICE ProtoSem 20-week innovation programme</strong>, I work on real-world retail and commerce challenges utilizing AI, analytics, intelligent systems, hardware simulation, and user-centered prototyping.
+                        </p>
+
+                        <div class="pt-4 flex flex-wrap gap-2">
+                            <span class="skill-tag tag-lavender">Leadership Focus</span>
+                            <span class="skill-tag tag-pink">Classical Arts Rigor</span>
+                            <span class="skill-tag tag-mint">Retail Innovation</span>
+                            <span class="skill-tag tag-yellow">Financial Literacy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Sidebar: Scrapbook Highlights (Spans 5 cols) -->
+                <div class="md:col-span-5 space-y-5">
+                    
+                    <!-- Current Focus Card -->
+                    <div class="pastel-card card-mint p-7 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="font-display font-bold text-xs uppercase tracking-wider text-[#1F7348]">Academic Journey</span>
+                            <span>🎓</span>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="bg-white/80 p-3.5 rounded-xl border border-emerald-200/80">
+                                <strong class="text-sm text-[#252329] block">B.Com Degree (Currently Pursuing)</strong>
+                                <span class="text-xs text-[#66616B]">Kumaraguru College of Liberal Arts & Science</span>
+                            </div>
+                            <div class="bg-white/80 p-3.5 rounded-xl border border-emerald-200/80">
+                                <strong class="text-sm text-[#252329] block">Bharathanatyam Degree (Completed)</strong>
+                                <span class="text-xs text-[#66616B]">Prayathnam Classical Arts Institution</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certifications Mini-Card -->
+                    <div class="pastel-card card-yellow p-7 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="font-display font-bold text-xs uppercase tracking-wider text-[#8C7518]">Key Certifications</span>
+                            <span>📜</span>
+                        </div>
+                        <ul class="text-xs text-[#66616B] space-y-2">
+                            <li class="flex items-center gap-2">
+                                <span class="text-[#8C7518] font-bold">●</span>
+                                <span><strong>Effective Leadership</strong> — HP Life Certified</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-[#8C7518] font-bold">●</span>
+                                <span><strong>Soft Skill Development</strong> — NPTEL Examination</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-[#8C7518] font-bold">●</span>
+                                <span><strong>National Financial Literacy Quiz</strong> — Online Participant</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             SKILLS & COMPETENCIES SECTION
+             (Creative Pastel Tags — No Generic Progress Bars!)
+             ========================================== -->
+        <section id="skills" class="scroll-mt-28 relative">
+            
+            <div class="flex items-baseline justify-between mb-8 pb-4 border-b border-black/10">
+                <div class="flex items-center gap-3">
+                    <span class="section-number">02</span>
+                    <div>
+                        <span class="section-heading-tag">Capabilities & Tooling</span>
+                        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-[#252329] mt-1">Skills & Domain Focus</h2>
+                    </div>
+                </div>
+                <span class="font-handwriting text-xl text-slate-500 hidden md:block">Categorized with pastel tags ✦</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Category 1: COMMERCE & STRATEGY (Lavender) -->
+                <div class="pastel-card card-lavender p-7 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="font-display font-bold text-xs uppercase tracking-widest text-[#6445B8]">Strategy</span>
+                            <span class="text-lg">💼</span>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-[#252329] mb-4">Commerce & Business</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag tag-lavender">Financial Literacy</span>
+                            <span class="skill-tag tag-lavender">SWOT Analysis</span>
+                            <span class="skill-tag tag-lavender">Prospect Theory</span>
+                            <span class="skill-tag tag-lavender">Emotional Branding</span>
+                            <span class="skill-tag tag-lavender">Market Analysis</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-3 border-t border-purple-200 text-xs text-[#6445B8] font-semibold">
+                        Commerce Acumen
+                    </div>
+                </div>
+
+                <!-- Category 2: TECH & PROTOTYPING (Blue) -->
+                <div class="pastel-card card-blue p-7 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="font-display font-bold text-xs uppercase tracking-widest text-[#1F699A]">Software</span>
+                            <span class="text-lg">💻</span>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-[#252329] mb-4">Tech & Prototyping</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag tag-blue">Antigravity IDE</span>
+                            <span class="skill-tag tag-blue">Power BI</span>
+                            <span class="skill-tag tag-blue">MIT App Inventor</span>
+                            <span class="skill-tag tag-blue">Scratch</span>
+                            <span class="skill-tag tag-blue">Base44</span>
+                            <span class="skill-tag tag-blue">HTML & CSS</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-3 border-t border-sky-200 text-xs text-[#1F699A] font-semibold">
+                        Digital Tools
+                    </div>
+                </div>
+
+                <!-- Category 3: HARDWARE & INNOVATION (Yellow) -->
+                <div class="pastel-card card-yellow p-7 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="font-display font-bold text-xs uppercase tracking-widest text-[#8C7518]">Hardware</span>
+                            <span class="text-lg">⚡</span>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-[#252329] mb-4">IoT & Simulation</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag tag-yellow">Tinkercad Circuits</span>
+                            <span class="skill-tag tag-yellow">Computational Hardware</span>
+                            <span class="skill-tag tag-yellow">Sensors to Sales</span>
+                            <span class="skill-tag tag-yellow">Real PCD Model</span>
+                            <span class="skill-tag tag-yellow">IoT Systems</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-3 border-t border-amber-200 text-xs text-[#8C7518] font-semibold">
+                        Practical Engineering
+                    </div>
+                </div>
+
+                <!-- Category 4: LEADERSHIP & CULTURE (Pink) -->
+                <div class="pastel-card card-pink p-7 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="font-display font-bold text-xs uppercase tracking-widest text-[#A83655]">Leadership</span>
+                            <span class="text-lg">🎭</span>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-[#252329] mb-4">Leadership & Arts</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag tag-pink">Bharathanatyam</span>
+                            <span class="skill-tag tag-pink">Effective Leadership</span>
+                            <span class="skill-tag tag-pink">Soft Skills</span>
+                            <span class="skill-tag tag-pink">Team Collaboration</span>
+                            <span class="skill-tag tag-pink">5S Methodology</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-3 border-t border-pink-200 text-xs text-[#A83655] font-semibold">
+                        Interpersonal Dynamics
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             PROJECTS / PROTOSEM WEEKLY DEEP DIVES
+             (Asymmetric Editorial Project Grid)
+             ========================================== -->
+        <section id="projects" class="scroll-mt-28 relative">
+            <a id="protosem"></a>
+            
+            <div class="flex items-baseline justify-between mb-8 pb-4 border-b border-black/10">
+                <div class="flex items-center gap-3">
+                    <span class="section-number">03</span>
+                    <div>
+                        <span class="section-heading-tag">ProtoSem Innovation Fellowship</span>
+                        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-[#252329] mt-1">Projects & Weekly Milestones</h2>
+                    </div>
+                </div>
+                <span class="font-handwriting text-xl text-slate-500 hidden md:block">20-Week Innovation Programme 🚀</span>
+            </div>
+
+            <!-- Intro Card -->
+            <div class="pastel-card card-ivory p-8 mb-10">
+                <div class="max-w-3xl space-y-3">
+                    <div class="inline-flex items-center gap-2 bg-[#252329] text-white px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                        ⚡ PRICE ProtoSem • Innovation Engineer Trainee
+                    </div>
+                    <h3 class="font-display font-bold text-2xl sm:text-3xl text-[#252329]">
+                        Solving Retail & Commerce Challenges Through Practical Technology
+                    </h3>
+                    <p class="text-[#66616B] text-base leading-relaxed">
+                        Working with industry problem statements across Phygital Retail, Intelligent Commerce, AI & Analytics, Prototyping, and Entrepreneurship.
                     </p>
                 </div>
             </div>
 
-            <!-- Contact Card -->
-            <div class="bento-card flex flex-col justify-center bg-accent text-white relative overflow-hidden">
-                <div class="absolute -right-4 -top-4 w-24 h-24 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
-                <h2 class="text-2xl font-bold mb-6 relative z-10">Let's Connect</h2>
-                <div class="flex flex-col gap-4 relative z-10 font-medium">
-                    <a href="mailto:tharunikasundaresan@gmail.com" class="hover:opacity-80 transition-opacity flex items-center gap-3">
-                        <span class="text-xl">✉️</span> Email Me
-                    </a>
-                    <a href="https://www.linkedin.com/in/tharunika-sundaresan-612172375" target="_blank" rel="noopener" class="hover:opacity-80 transition-opacity flex items-center gap-3">
-                        <span class="text-xl">💼</span> LinkedIn
-                    </a>
-                    <a href="https://github.com/tharunikasundaresan-gif" target="_blank" rel="noopener" class="hover:opacity-80 transition-opacity flex items-center gap-3">
-                        <span class="text-xl">🐙</span> GitHub
-                    </a>
-                </div>
-            </div>
+            <!-- Asymmetric Editorial Grid of Completed Weeks -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
+                
+                <!-- Project 00: Week 0 (Large Featured Card - Spans 12 cols) -->
+                <div id="week0" class="md:col-span-12 scroll-mt-28">
+                    <div class="project-editorial-card card-lavender p-8 sm:p-10">
+                        <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
+                            <div>
+                                <div class="flex items-center gap-2.5 mb-2">
+                                    <span class="skill-tag tag-lavender !py-0.5 !px-2.5 !text-xs">Phase 01</span>
+                                    <span class="skill-tag tag-mint !py-0.5 !px-2.5 !text-xs">✦ Completed</span>
+                                    <span class="text-xs font-bold text-slate-500">Week 00 of 20</span>
+                                </div>
+                                <h3 class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-[#252329]">
+                                    Week 0 – A Week of Learning, Connecting and Creating
+                                </h3>
+                            </div>
+                            <span class="project-number-badge text-[#6445B8]">00</span>
+                        </div>
 
-            <!-- Current Focus -->
-            <div class="bento-card md:col-span-1 border-t-4 border-t-black">
-                <h2 class="text-xl font-bold text-accent mb-5 flex items-center gap-2">🎓 Current Focus</h2>
-                <ul class="space-y-4 text-gray-700">
-                    <li class="flex flex-col">
-                        <strong class="text-lg">B.Com Degree</strong>
-                        <span class="text-sm text-gray-500 mt-1">Kumaraguru College of Liberal Arts and Science</span>
-                    </li>
-                    <li class="flex flex-col pt-3 border-t border-gray-100">
-                        <strong class="text-lg">Bharathanatyam Degree</strong>
-                        <span class="text-sm text-gray-500 mt-1">Prayathnam</span>
-                    </li>
-                </ul>
-            </div>
+                        <p class="text-base sm:text-lg text-[#66616B] leading-relaxed mb-6 max-w-4xl">
+                            The first week of Protosem was an exciting blend of learning, teamwork, self-discovery and new experiences. From getting to know our peers to meeting inspiring entrepreneurs, every day brought something different and helped us step out of our comfort zones.
+                        </p>
 
-            <!-- Learning Journey / Certifications -->
-            <div class="bento-card md:col-span-2">
-                <h2 class="text-xl font-bold text-accent mb-5 flex items-center gap-2">📜 Learning Journey</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="p-5 bg-gray-50 rounded-2xl border border-gray-100 hover:bg-gray-100 transition-colors">
-                        <h3 class="font-bold text-lg text-black mb-1">Effective Leadership</h3>
-                        <p class="text-sm text-gray-600">Online course by HP Life</p>
+                        <!-- Highlights Pill Tags -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
+                            <div class="bg-white/80 p-3.5 rounded-xl border border-purple-200/80">
+                                <strong class="text-xs text-[#6445B8] uppercase block">Days 1 & 2</strong>
+                                <span class="text-sm font-semibold text-[#252329]">Stone Paper Scissors, 16 Personalities & Zen Pencil</span>
+                            </div>
+                            <div class="bg-white/80 p-3.5 rounded-xl border border-purple-200/80">
+                                <strong class="text-xs text-[#6445B8] uppercase block">Days 3 & 4</strong>
+                                <span class="text-sm font-semibold text-[#252329]">Beta Teams, Among Us, Marshmallow & RAI CEO Launch</span>
+                            </div>
+                            <div class="bg-white/80 p-3.5 rounded-xl border border-purple-200/80">
+                                <strong class="text-xs text-[#6445B8] uppercase block">Day 5 & Retro</strong>
+                                <span class="text-sm font-semibold text-[#252329]">Thulasi Pharmacy & A Toddler Thing Keynotes</span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-purple-200">
+                            <a href="week-00.html" class="btn-editorial-primary text-sm">
+                                <span>Read Full Week 0 Dedicated Page</span>
+                                <span class="project-arrow-icon transition-transform">↗</span>
+                            </a>
+                            <span class="font-handwriting text-lg text-[#6445B8]">Orientation & Team Dynamics</span>
+                        </div>
                     </div>
-                    <div class="p-5 bg-gray-50 rounded-2xl border border-gray-100 hover:bg-gray-100 transition-colors">
-                        <h3 class="font-bold text-lg text-black mb-1">Soft Skill Development</h3>
-                        <p class="text-sm text-gray-600">NPTEL Examination</p>
-                    </div>
-                    <div class="p-5 bg-gray-50 rounded-2xl border border-gray-100 hover:bg-gray-100 transition-colors sm:col-span-2">
-                        <h3 class="font-bold text-lg text-black mb-1">National Financial Literacy Quiz</h3>
-                        <p class="text-sm text-gray-600">Online Round Participant</p>
-                    </div>
                 </div>
-            </div>
 
-        </div>
-        </section>
-
-        <!-- PROTOSEM SECTION -->
-        <section id="protosem" class="scroll-mt-28 mt-16 pt-16 border-t border-gray-200">
-            <!-- Section Intro -->
-            <div class="text-center mb-12">
-                <span class="text-sm font-bold tracking-widest text-gray-400 uppercase mb-2 block">ProtoSem</span>
-                <h2 class="text-4xl md:text-5xl font-extrabold text-black mb-4">PRICE ProtoSem</h2>
-                <div class="inline-block bg-black text-white px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
-                    Innovation Engineer Trainee
-                </div>
-                <h3 class="text-xl text-gray-600 font-medium mb-6">20-Week Industry-Integrated Innovation Programme</h3>
-                <p class="text-gray-500 max-w-3xl mx-auto text-lg leading-relaxed">
-                    Selected for a 20-week industry-integrated innovation programme focused on solving real-world retail and commerce challenges through AI, analytics, intelligent systems, IoT, prototyping, and entrepreneurship. Working with industry problem statements to explore, develop, and validate practical technology solutions beyond conventional classroom learning.
-                </p>
-            </div>
-
-            <!-- Domain Focus Tags -->
-            <div class="flex flex-wrap justify-center gap-3 mb-16">
-                <span class="domain-tag">Phygital Retail & Intelligent Commerce</span>
-                <span class="domain-tag">AI & Analytics</span>
-                <span class="domain-tag">Intelligent Systems & IoT</span>
-                <span class="domain-tag">Prototyping</span>
-                <span class="domain-tag">Entrepreneurship</span>
-            </div>
-
-            <!-- WEEK 0 FEATURED SECTION -->
-            <div id="week0" class="scroll-mt-28 mb-16">
-                <a id="week-00"></a>
-                <div class="bento-card bg-white border border-gray-200 rounded-3xl p-6 md:p-10 shadow-md">
-                    <!-- Week 0 Header -->
-                    <div class="flex flex-wrap items-center justify-between gap-4 pb-6 mb-8 border-b border-gray-100">
+                <!-- Project 01: Week 1 (Medium Card - Spans 6 cols) -->
+                <div id="week1" class="md:col-span-6 scroll-mt-28">
+                    <div class="project-editorial-card card-blue p-8 h-full flex flex-col justify-between">
                         <div>
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="bg-black text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Phase 01</span>
-                                <span class="bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Completed</span>
-                                <span class="text-xs font-bold text-gray-400">Week 00 of 20</span>
-                            </div>
-                            <h3 class="text-2xl md:text-3xl font-extrabold text-black tracking-tight">
-                                Week 0 – A Week of Learning, Connecting and Creating
-                            </h3>
-                            <p class="text-gray-500 font-medium text-base mt-2 max-w-3xl leading-relaxed">
-                                The first week of Protosem was an exciting blend of learning, teamwork, self-discovery and new experiences. From getting to know our peers to meeting inspiring entrepreneurs, every day brought something different and helped us step out of our comfort zones.
-                            </p>
-                        </div>
-                        <a href="week-00.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-black text-white rounded-full text-xs font-bold hover:bg-gray-800 transition-colors shrink-0">
-                            <span>Open Dedicated Page</span>
-                            <span>↗</span>
-                        </a>
-                    </div>
-
-                    <!-- 5-Day Detailed Cards -->
-                    <div class="space-y-6">
-                        <!-- Day 1 -->
-                        <div class="p-6 rounded-2xl bg-gray-50 border border-gray-200/80">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="flex items-center gap-3">
-                                    <span class="day-badge">Day 1</span>
-                                    <h4 class="text-lg md:text-xl font-bold text-black">Breaking the Ice</h4>
+                            <div class="flex items-start justify-between gap-2 mb-4">
+                                <div class="flex items-center gap-2">
+                                    <span class="skill-tag tag-blue !py-0.5 !px-2.5 !text-xs">Phase 01</span>
+                                    <span class="skill-tag tag-mint !py-0.5 !px-2.5 !text-xs">Completed</span>
                                 </div>
-                                <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Onboarding</span>
+                                <span class="project-number-badge text-[#1F699A]">01</span>
                             </div>
-                            <div class="text-gray-700 leading-relaxed text-base space-y-2">
-                                <p>We began our Protosem journey with an icebreaking session through a fun game of Stone Paper Scissors. It was a simple activity, but it gave us the opportunity to interact with almost everyone and helped us feel more comfortable with the group.</p>
-                                <p>We then introduced ourselves and shared the things we were good at. This helped us understand each other's interests, talents and personalities. Later, we went on a Forge tour, where we got familiarised with the environment, facilities and the space where many of our upcoming activities would take place.</p>
-                            </div>
-                        </div>
 
-                        <!-- Day 2 -->
-                        <div class="p-6 rounded-2xl bg-gray-50 border border-gray-200/80">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="flex items-center gap-3">
-                                    <span class="day-badge">Day 2</span>
-                                    <h4 class="text-lg md:text-xl font-bold text-black">Understanding Ourselves</h4>
-                                </div>
-                                <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Self-Discovery</span>
-                            </div>
-                            <div class="text-gray-700 leading-relaxed text-base space-y-2">
-                                <p>The second day focused more on self-awareness. We took the 16 Personalities Test, which helped us understand our personality traits and characteristics better.</p>
-                                <p>We were then asked to find a story on Zen Pencil that matched our personality. Each of us presented our chosen story and explained why we felt it reflected our character. It was interesting to see how the same activity could bring out different perspectives and interpretations from each person.</p>
-                            </div>
-                        </div>
-
-                        <!-- Day 3 -->
-                        <div class="p-6 rounded-2xl bg-gray-50 border border-gray-200/80">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="flex items-center gap-3">
-                                    <span class="day-badge">Day 3</span>
-                                    <h4 class="text-lg md:text-xl font-bold text-black">Teamwork and Professional Growth</h4>
-                                </div>
-                                <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Team Dynamics</span>
-                            </div>
-                            <div class="text-gray-700 leading-relaxed text-base space-y-2">
-                                <p>Day three was all about team building and collaboration. We formed our Beta teams and participated in activities such as Among Us and the Marshmallow Challenge. These activities encouraged us to communicate, think creatively and work together as a team.</p>
-                                <p>We also had a LinkedIn session, where we learned how to create and develop our professional profiles. The session gave us an idea of how we can start building our professional identity and network even as students.</p>
-                            </div>
-                        </div>
-
-                        <!-- Day 4 -->
-                        <div class="p-6 rounded-2xl bg-gray-50 border border-gray-200/80">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="flex items-center gap-3">
-                                    <span class="day-badge">Day 4</span>
-                                    <h4 class="text-lg md:text-xl font-bold text-black">Getting Ready for the Journey Ahead</h4>
-                                </div>
-                                <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Orientation & Launch</span>
-                            </div>
-                            <div class="text-gray-700 leading-relaxed text-base space-y-2">
-                                <p>On the fourth day, we were once again familiarised with the rules and guidelines of Forge. We were also introduced to the leaderboard system and understood how it worked.</p>
-                                <p>The highlight of the day was our launch event, where Mr. Kumar Rajagopalan, CEO of the Retailers Association of India, delivered an inspiring speech. His insights and experiences gave us a fresh perspective and motivated us to make the most of the opportunities provided through Protosem.</p>
-                            </div>
-                        </div>
-
-                        <!-- Day 5 -->
-                        <div class="p-6 rounded-2xl bg-gray-50 border border-gray-200/80">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="flex items-center gap-3">
-                                    <span class="day-badge">Day 5</span>
-                                    <h4 class="text-lg md:text-xl font-bold text-black">Learning from Entrepreneurs</h4>
-                                </div>
-                                <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Entrepreneurship</span>
-                            </div>
-                            <div class="text-gray-700 leading-relaxed text-base space-y-2">
-                                <p>The fifth day was an opportunity to learn directly from entrepreneurs. We had a Young Entrepreneurship Programme session with the founder of Thulasi Pharmacy, who shared his inspiring life journey, challenges and experiences as an entrepreneur.</p>
-                                <p>We also interacted with the founder of A Toddler Thing, who is a graduate of our college. Listening to his entrepreneurial journey was especially inspiring because it showed us how someone from our own college community had turned an idea into a venture.</p>
-                                <p>Later that afternoon, we presented our experiences from the first week of Protosem. We shared photographs, memorable moments and highlights from the different activities and sessions we had participated in throughout the week.</p>
-                            </div>
-                        </div>
-
-                        <!-- Looking Back at Week One -->
-                        <div class="p-6 rounded-2xl bg-black text-white">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="bg-white text-black text-xs font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">Retrospective</span>
-                                <h4 class="text-lg md:text-xl font-bold text-white">Looking Back at Week One</h4>
-                            </div>
-                            <div class="text-gray-300 leading-relaxed text-base space-y-2">
-                                <p>The first week of Protosem was much more than just a series of activities. It gave us opportunities to understand ourselves, connect with others, develop teamwork, build professional skills and learn from real-life entrepreneurs.</p>
-                                <p>Every day brought a new lesson and a new experience. From the first icebreaking game to our final presentation, the week helped us become more confident, collaborative and open to new possibilities.</p>
-                                <p class="text-white font-semibold pt-1">Week One was just the beginning, but it already gave us memories, connections and lessons that we can carry forward throughout our Protosem journey.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- WEEK 1 FEATURED SECTION -->
-            <div id="week1" class="scroll-mt-28 mb-16">
-                <a id="week-01"></a>
-                <div class="bento-card bg-white border-2 border-black rounded-3xl p-6 md:p-10 shadow-lg">
-                    <!-- Week 1 Header -->
-                    <div class="flex flex-wrap items-center justify-between gap-4 pb-6 mb-8 border-b border-gray-100">
-                        <div>
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="bg-black text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Phase 01</span>
-                                <span class="bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Completed</span>
-                                <span class="text-xs font-bold text-gray-400">Week 01 of 20</span>
-                            </div>
-                            <h3 class="text-2xl md:text-4xl font-extrabold text-black tracking-tight">
+                            <h3 class="font-display font-extrabold text-2xl text-[#252329] mb-3">
                                 Week 1 – Learning Journey
                             </h3>
-                            <p class="text-gray-500 font-medium text-base mt-2 max-w-3xl leading-relaxed">
-                                Deep dives into Instagram algorithms, Design Thinking, Power BI dashboards, SWOT analysis, Prospect Theory, personal digital portfolios in Antigravity IDE, and industry expert masterclasses.
+                            <p class="text-sm sm:text-base text-[#66616B] leading-relaxed mb-4">
+                                Deep dives into Instagram algorithms, Design Thinking with Dr. Meera, Power BI dashboards with Affrina, SWOT analysis, Prospect Theory, and creating personal portfolios in Antigravity IDE.
                             </p>
-                        </div>
-                        <a href="week-01.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-black text-white rounded-full text-xs font-bold hover:bg-gray-800 transition-colors shrink-0">
-                            <span>Open Dedicated Page</span>
-                            <span>↗</span>
-                        </a>
-                    </div>
 
-                    <!-- Week 1 Daily Cards -->
-                    <div class="space-y-6">
-                        
-                        <!-- Day 1 -->
-                        <div class="p-6 rounded-2xl bg-gray-50 border border-gray-200/80 hover:border-black transition-colors">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="flex items-center gap-3">
-                                    <span class="day-badge">Day 1</span>
-                                    <h4 class="text-lg md:text-xl font-bold text-black">Instagram Algorithms & Design Thinking</h4>
-                                </div>
-                                <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Tech Talk & Retail</span>
-                            </div>
-                            <div class="text-gray-700 leading-relaxed text-base space-y-3">
-                                <p>We started the day with a Tech Talk by Vedika on how Instagram works and how its algorithm decides the type of reels shown to each user. It helped us understand how social media platforms analyse user interests and behaviour to personalise content.</p>
-                                <p>Later, Dr. Meera conducted an insightful session on Design Thinking, where we learned about approaching problems creatively and understanding them from the user’s perspective.</p>
-                                <p>In the afternoon, we were asked to choose a sector from the retail industry. Our team selected the Food and Beverage sector and prepared a presentation covering its development and evolution over the years.</p>
+                            <div class="flex flex-wrap gap-1.5 mb-6">
+                                <span class="skill-tag tag-blue !py-1 !px-2.5 !text-xs">Design Thinking</span>
+                                <span class="skill-tag tag-blue !py-1 !px-2.5 !text-xs">Power BI</span>
+                                <span class="skill-tag tag-blue !py-1 !px-2.5 !text-xs">Prospect Theory</span>
+                                <span class="skill-tag tag-blue !py-1 !px-2.5 !text-xs">Antigravity IDE</span>
                             </div>
                         </div>
 
-                        <!-- Day 2 -->
-                        <div class="p-6 rounded-2xl bg-gray-50 border border-gray-200/80 hover:border-black transition-colors">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="flex items-center gap-3">
-                                    <span class="day-badge">Day 2</span>
-                                    <h4 class="text-lg md:text-xl font-bold text-black">Power BI Dashboards & SWOT Analysis</h4>
-                                </div>
-                                <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Analytics & Strategy</span>
-                            </div>
-                            <div class="text-gray-700 leading-relaxed text-base space-y-3">
-                                <p>The day began with a Tech Talk by Affrina on Power BI. We learned how raw and unorganised data can be converted into meaningful and visually appealing dashboards using different charts and graphs, such as bar graphs. This gave us a basic understanding of how data can be analysed and presented effectively.</p>
-                                <p>We also worked on SWOT Analysis, where we identified the strengths, weaknesses, opportunities and threats of a given business or idea. Presenting our analysis helped us improve our teamwork, analytical thinking and communication skills.</p>
-                            </div>
+                        <div class="pt-4 border-t border-sky-200 flex items-center justify-between">
+                            <a href="week-01.html" class="btn-editorial-secondary text-sm !py-2 !px-4">
+                                <span>Week 1 Details ↗</span>
+                            </a>
+                            <span class="text-xs font-bold text-[#1F699A]">Analytics & Tech</span>
                         </div>
-
-                        <!-- Day 4 -->
-                        <div class="p-6 rounded-2xl bg-gray-50 border border-gray-200/80 hover:border-black transition-colors">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="flex items-center gap-3">
-                                    <span class="day-badge">Day 4</span>
-                                    <h4 class="text-lg md:text-xl font-bold text-black">Prospect Theory & Antigravity Portfolios</h4>
-                                </div>
-                                <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Behavioral Economics & Tech</span>
-                            </div>
-                            <div class="text-gray-700 leading-relaxed text-base space-y-3">
-                                <p>Parameshwari conducted a Tech Talk on Prospect Theory, which helped us understand how people make decisions when faced with risks, gains and losses. It gave us a different perspective on human decision-making and behaviour.</p>
-                                <p>Later, we got a hands-on opportunity to create our own personal portfolios using Antigravity IDE. This allowed us to explore the platform while also presenting our skills, experiences and learning in a digital format.</p>
-                            </div>
-                        </div>
-
-                        <!-- Day 5 -->
-                        <div class="p-6 rounded-2xl bg-gray-50 border border-gray-200/80 hover:border-black transition-colors">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="flex items-center gap-3">
-                                    <span class="day-badge">Day 5</span>
-                                    <h4 class="text-lg md:text-xl font-bold text-black">Base44, Goal Setting & Industry Masterclasses</h4>
-                                </div>
-                                <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Innovation & Industry</span>
-                            </div>
-                            <div class="text-gray-700 leading-relaxed text-base space-y-3">
-                                <p>The day started with a Tech Talk by Lingaraj on Base44, where we learned about developing an application and explored how technology can be used to turn an idea into a functional product.</p>
-                                <p>We then attended a session called “Goal, Vision and Glory” conducted by Ram, which encouraged us to think about our goals, future vision and what we aspire to achieve.</p>
-                                <p>Later, we had an interactive session with our guest lecturers Sabareesh, Pranesh and Mounesh. Through our conversations with them, we gained valuable insights into the agriculture and textile industries and learned from their experiences and perspectives.</p>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
-            </div>
 
-            <!-- WEEK 2 FEATURED SECTION -->
-            <div id="week2" class="scroll-mt-28 mb-16">
-                <a id="week-02"></a>
-                <div class="bento-card bg-white border-2 border-black rounded-3xl p-6 md:p-10 shadow-lg">
-                    <!-- Week 2 Header -->
-                    <div class="flex flex-wrap items-center justify-between gap-4 pb-6 mb-8 border-b border-gray-100">
+                <!-- Project 02: Week 2 (Medium Card - Spans 6 cols) -->
+                <div id="week2" class="md:col-span-6 scroll-mt-28">
+                    <div class="project-editorial-card card-mint p-8 h-full flex flex-col justify-between">
                         <div>
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="bg-black text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Phase 01</span>
-                                <span class="bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Completed</span>
-                                <span class="text-xs font-bold text-gray-400">Week 02 of 20</span>
+                            <div class="flex items-start justify-between gap-2 mb-4">
+                                <div class="flex items-center gap-2">
+                                    <span class="skill-tag tag-mint !py-0.5 !px-2.5 !text-xs">Phase 01</span>
+                                    <span class="skill-tag tag-mint !py-0.5 !px-2.5 !text-xs">Completed</span>
+                                </div>
+                                <span class="project-number-badge text-[#1F7348]">02</span>
                             </div>
-                            <h3 class="text-2xl md:text-4xl font-extrabold text-black tracking-tight">
+
+                            <h3 class="font-display font-extrabold text-2xl text-[#252329] mb-3">
                                 Week 2 – Learning Journey
                             </h3>
-                            <p class="text-gray-500 font-medium text-base mt-2 max-w-3xl leading-relaxed">
-                                Emotional Branding insights, 5S Japanese workspace methodology, chatbot applications, logical algorithm design, UI/UX principles, Scratch rapid creativity challenges, data analytics, and interactive application prototyping with MIT App Inventor.
+                            <p class="text-sm sm:text-base text-[#66616B] leading-relaxed mb-4">
+                                Emotional Branding with Nandhini S, Japanese 5S methodology with Brahma, Chatbots with Brindha, Algorithms with Gowri, UI Design with Jensy, Scratch meme sprint, and MIT App Inventor with Dakshana.
                             </p>
-                        </div>
-                        <a href="week-02.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-black text-white rounded-full text-xs font-bold hover:bg-gray-800 transition-colors shrink-0">
-                            <span>Open Dedicated Page</span>
-                            <span>↗</span>
-                        </a>
-                    </div>
 
-                    <!-- Week 2 Daily Cards -->
-                    <div class="space-y-6">
-                        
-                        <!-- Day 1 -->
-                        <div class="p-6 rounded-2xl bg-gray-50 border border-gray-200/80 hover:border-black transition-colors">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="flex items-center gap-3">
-                                    <span class="day-badge">Day 1</span>
-                                    <h4 class="text-lg md:text-xl font-bold text-black">Emotional Branding, Problem Identification & 5S Methodology</h4>
-                                </div>
-                                <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Branding & Workspace</span>
-                            </div>
-                            <div class="text-gray-700 leading-relaxed text-base space-y-3">
-                                <p>The day started with a tech talk by Nandhini S on the Power of Emotional Branding, where we learned how emotions help brands create stronger connections with customers. We then worked on problem identification and learned how to identify real-world problems that could be solved through innovation.</p>
-                                <p>Brahma conducted a session on the 5S Japanese methodology, which helped us understand the importance of maintaining an organised and efficient workspace. Later, we worked as the Red Cubical team and participated in team activities.</p>
+                            <div class="flex flex-wrap gap-1.5 mb-6">
+                                <span class="skill-tag tag-mint !py-1 !px-2.5 !text-xs">Emotional Branding</span>
+                                <span class="skill-tag tag-mint !py-1 !px-2.5 !text-xs">5S Methodology</span>
+                                <span class="skill-tag tag-mint !py-1 !px-2.5 !text-xs">MIT App Inventor</span>
+                                <span class="skill-tag tag-mint !py-1 !px-2.5 !text-xs">UI/UX Design</span>
                             </div>
                         </div>
 
-                        <!-- Day 2 -->
-                        <div class="p-6 rounded-2xl bg-gray-50 border border-gray-200/80 hover:border-black transition-colors">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="flex items-center gap-3">
-                                    <span class="day-badge">Day 2</span>
-                                    <h4 class="text-lg md:text-xl font-bold text-black">Chatbots, Algorithms & Creative Problem Solving</h4>
-                                </div>
-                                <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">AI & Logic</span>
-                            </div>
-                            <div class="text-gray-700 leading-relaxed text-base space-y-3">
-                                <p>We started the day with a tech talk by Brindha on chatbots and their applications. Gowri then conducted a session on algorithms, where we learned how problems can be broken down into a set of logical steps.</p>
-                                <p>We also participated in activities such as Podi Dosa, watched the video Think Like a Coder, and took part in a paper-and-paste activity. These activities helped us improve our creativity, teamwork, and problem-solving skills.</p>
-                            </div>
+                        <div class="pt-4 border-t border-emerald-200 flex items-center justify-between">
+                            <a href="week-02.html" class="btn-editorial-secondary text-sm !py-2 !px-4">
+                                <span>Week 2 Details ↗</span>
+                            </a>
+                            <span class="text-xs font-bold text-[#1F7348]">Logic & App Dev</span>
                         </div>
-
-                        <!-- Day 3 -->
-                        <div class="p-6 rounded-2xl bg-gray-50 border border-gray-200/80 hover:border-black transition-colors">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="flex items-center gap-3">
-                                    <span class="day-badge">Day 3</span>
-                                    <h4 class="text-lg md:text-xl font-bold text-black">UI Design Principles & Rapid Scratch Challenges</h4>
-                                </div>
-                                <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">UI/UX & Creativity</span>
-                            </div>
-                            <div class="text-gray-700 leading-relaxed text-base space-y-3">
-                                <p>The day started with a tech talk by Jensy on designing user interfaces. We learned about the importance of creating simple, user-friendly, and visually appealing interfaces.</p>
-                                <p>We then worked with Scratch and were given a challenge to create a meme within two minutes. This activity encouraged us to think quickly and use our creativity within a limited time.</p>
-                            </div>
-                        </div>
-
-                        <!-- Day 4 -->
-                        <div class="p-6 rounded-2xl bg-gray-50 border border-gray-200/80 hover:border-black transition-colors">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="flex items-center gap-3">
-                                    <span class="day-badge">Day 4</span>
-                                    <h4 class="text-lg md:text-xl font-bold text-black">Data Analytics & MIT App Inventor Prototyping</h4>
-                                </div>
-                                <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Analytics & App Dev</span>
-                            </div>
-                            <div class="text-gray-700 leading-relaxed text-base space-y-3">
-                                <p>Dakshana conducted a tech talk on data analytics, where we learned about the importance of analysing data and finding useful insights from it.</p>
-                                <p>We also explored MIT App Inventor and learned the basics of developing applications using a simple and interactive platform. This session helped us understand how an idea can be developed into a functional application.</p>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
-            </div>
 
-            <!-- WEEK 3 FEATURED SECTION -->
-            <div id="week3" class="scroll-mt-28 mb-16">
-                <a id="week-03"></a>
-                <div class="bento-card bg-white border-2 border-black rounded-3xl p-6 md:p-10 shadow-lg">
-                    <!-- Week 3 Header -->
-                    <div class="flex flex-wrap items-center justify-between gap-4 pb-6 mb-8 border-b border-gray-100">
-                        <div>
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="bg-black text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Phase 01</span>
-                                <span class="bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Completed</span>
-                                <span class="text-xs font-bold text-gray-400">Week 03 of 20</span>
-                            </div>
-                            <h3 class="text-2xl md:text-4xl font-extrabold text-black tracking-tight">
-                                Week 3 – Learning Journey
-                            </h3>
-                            <p class="text-gray-500 font-medium text-base mt-2 max-w-3xl leading-relaxed">
-                                Computational hardware concepts, voltage, power, diodes, transmitters, circuit simulation using Tinkercad, commercializing sensor technologies (From Sensors to Sales), and product lifecycle development using the Real PCD model.
-                            </p>
-                        </div>
-                        <a href="week-03.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-black text-white rounded-full text-xs font-bold hover:bg-gray-800 transition-colors shrink-0">
-                            <span>Open Dedicated Page</span>
-                            <span>↗</span>
-                        </a>
-                    </div>
-
-                    <!-- Week 3 Daily Cards -->
-                    <div class="space-y-6">
-                        
-                        <!-- Day 4 -->
-                        <div class="p-6 rounded-2xl bg-gray-50 border border-gray-200/80 hover:border-black transition-colors">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="flex items-center gap-3">
-                                    <span class="day-badge">Day 4</span>
-                                    <h4 class="text-lg md:text-xl font-bold text-black">Computational Hardware & Circuit Simulation in Tinkercad</h4>
+                <!-- Project 03: Week 3 (Horizontal Card - Spans 12 cols) -->
+                <div id="week3" class="md:col-span-12 scroll-mt-28">
+                    <div class="project-editorial-card card-yellow p-8 sm:p-10">
+                        <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="skill-tag tag-yellow !py-0.5 !px-2.5 !text-xs">Phase 01</span>
+                                    <span class="skill-tag tag-mint !py-0.5 !px-2.5 !text-xs">Completed</span>
+                                    <span class="text-xs font-bold text-slate-500">Week 03 of 20</span>
                                 </div>
-                                <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Hardware & Electronics</span>
+                                <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-[#252329]">
+                                    Week 3 – Computational Hardware, Tinkercad & Real PCD Model
+                                </h3>
                             </div>
-                            <div class="text-gray-700 leading-relaxed text-base space-y-3">
-                                <p>We had a session on computational hardware where we learned about basic concepts such as voltage, power, diodes, and transmitters. The session helped us understand how different hardware components work and their role in electronic systems.</p>
-                                <p>We also explored Tinkercad, which gave us an opportunity to practically experiment with circuits and understand the working of different components.</p>
-                            </div>
+                            <span class="project-number-badge text-[#8C7518]">03</span>
                         </div>
 
-                        <!-- Day 5 -->
-                        <div class="p-6 rounded-2xl bg-gray-50 border border-gray-200/80 hover:border-black transition-colors">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="flex items-center gap-3">
-                                    <span class="day-badge">Day 5</span>
-                                    <h4 class="text-lg md:text-xl font-bold text-black">From Sensors to Sales & the Real PCD Model</h4>
-                                </div>
-                                <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">IoT & Product Strategy</span>
-                            </div>
-                            <div class="text-gray-700 leading-relaxed text-base space-y-3">
-                                <p>The day started with a tech talk on From Sensors to Sales, where we learned how sensor-based technologies can be connected to real-world business applications.</p>
-                                <p>We also learned about the Real PCD model and understood how different stages of a product can be developed and applied in a practical environment.</p>
-                            </div>
-                        </div>
+                        <p class="text-base sm:text-lg text-[#66616B] leading-relaxed mb-6 max-w-4xl">
+                            Computational hardware concepts, voltage, power, diodes, transmitters, circuit simulation in Tinkercad, connecting sensors to commercial retail applications with "From Sensors to Sales", and the Real PCD product lifecycle model.
+                        </p>
 
+                        <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-amber-200">
+                            <a href="week-03.html" class="btn-editorial-primary text-sm">
+                                <span>Read Full Week 3 Dedicated Page</span>
+                                <span class="project-arrow-icon transition-transform">↗</span>
+                            </a>
+                            <span class="font-handwriting text-lg text-[#8C7518]">Hardware & Product Strategy</span>
+                        </div>
                     </div>
                 </div>
+
             </div>
 
-            <!-- Programme Progress Indicator -->
-            <div class="max-w-2xl mx-auto mb-16 hidden md:block">
-                <div class="progress-line">
-                    <span class="progress-node">01</span>
-                    <span class="progress-node">05</span>
-                    <span class="progress-node">10</span>
-                    <span class="progress-node">15</span>
-                    <span class="progress-node">20</span>
+            <!-- ==========================================
+                 20-WEEK ROADMAP & INTERACTIVE PHASE FILTER
+                 ========================================== -->
+            <div class="space-y-8">
+                
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <span class="section-heading-tag">Full Fellowship Roadmap</span>
+                    <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-[#252329]">
+                        20-Week Interactive Timeline
+                    </h3>
+                    <p class="text-sm text-[#66616B]">
+                        Filter by phase to explore completed weekly logs and upcoming innovation milestones.
+                    </p>
                 </div>
-                <div class="flex justify-between text-xs text-gray-400 font-bold mt-2 uppercase tracking-wider">
-                    <span>Phase 01</span>
-                    <span>Phase 02</span>
-                    <span>Phase 03</span>
-                    <span>Phase 04</span>
+
+                <!-- Phase Filter Buttons -->
+                <div class="flex flex-wrap justify-center gap-2" id="phase-filters">
+                    <button class="phase-pill-btn active" data-phase="all">ALL WEEKS (00-20)</button>
+                    <button class="phase-pill-btn" data-phase="1">PHASE 01</button>
+                    <button class="phase-pill-btn" data-phase="2">PHASE 02</button>
+                    <button class="phase-pill-btn" data-phase="3">PHASE 03</button>
+                    <button class="phase-pill-btn" data-phase="4">PHASE 04</button>
                 </div>
-            </div>
 
-            <!-- Phase Navigation -->
-            <div class="flex flex-wrap justify-center gap-2 mb-12" id="phase-filters">
-                <button class="phase-btn active px-5 py-2 rounded-full border border-gray-200 font-semibold text-sm transition-colors" data-phase="all">ALL</button>
-                <button class="phase-btn px-5 py-2 rounded-full border border-gray-200 font-semibold text-sm text-gray-500 hover:text-black transition-colors" data-phase="1">PHASE 01</button>
-                <button class="phase-btn px-5 py-2 rounded-full border border-gray-200 font-semibold text-sm text-gray-500 hover:text-black transition-colors" data-phase="2">PHASE 02</button>
-                <button class="phase-btn px-5 py-2 rounded-full border border-gray-200 font-semibold text-sm text-gray-500 hover:text-black transition-colors" data-phase="3">PHASE 03</button>
-                <button class="phase-btn px-5 py-2 rounded-full border border-gray-200 font-semibold text-sm text-gray-500 hover:text-black transition-colors" data-phase="4">PHASE 04</button>
-            </div>
+                <!-- Dynamic Grid Container -->
+                <div class="editorial-timeline max-w-5xl mx-auto relative pb-8">
+                    <div id="protosem-timeline" class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-x-12 relative z-10"></div>
+                </div>
 
-            <!-- 20-Week Journey Visual Timeline -->
-            <div class="timeline-container max-w-4xl mx-auto relative pb-12">
-                <div class="timeline-line"></div>
-                <div id="protosem-timeline" class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-x-16 relative z-10 pl-12 md:pl-0"></div>
             </div>
 
         </section>
 
-        <!-- BLOG SECTION -->
-        <section id="blog" class="scroll-mt-28 mt-16 pt-16 border-t border-gray-200">
-            <div class="text-center mb-12">
-                <span class="text-sm font-bold tracking-widest text-gray-400 uppercase mb-2 block">Journal</span>
-                <h2 class="text-4xl font-extrabold text-black mb-4">Blog</h2>
-                <p class="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
-                    Thoughts, learnings, and technical deep dives.
-                </p>
-            </div>
+
+        <!-- ==========================================
+             JOURNAL / BLOG SECTION
+             ========================================== -->
+        <section id="blog" class="scroll-mt-28 relative">
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto pb-12">
-                <!-- Week 0 Blog Post -->
-                <a href="#week0" class="bento-card flex flex-col justify-between cursor-pointer group">
+            <div class="flex items-baseline justify-between mb-8 pb-4 border-b border-black/10">
+                <div class="flex items-center gap-3">
+                    <span class="section-number">04</span>
                     <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full uppercase tracking-wider">Protosem</span>
-                            <span class="text-xs text-gray-400 font-medium">Week 0</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-black mb-2 group-hover:underline">Week 0: A Week of Learning, Connecting & Creating</h3>
-                        <p class="text-gray-500 text-sm line-clamp-3 leading-relaxed">
-                            The first week of Protosem was an exciting blend of learning, teamwork, self-discovery and new experiences. From getting to know our peers to meeting inspiring entrepreneurs...
-                        </p>
+                        <span class="section-heading-tag">Editorial Journal</span>
+                        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-[#252329] mt-1">Weekly Reflections & Blog</h2>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-black">
-                        <span>Read Full Story →</span>
-                        <span class="text-gray-400 font-normal">Orientation</span>
-                    </div>
-                </a>
-
-                <!-- Week 1 Blog Post -->
-                <a href="#week1" class="bento-card flex flex-col justify-between cursor-pointer group">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full uppercase tracking-wider">Protosem</span>
-                            <span class="text-xs text-gray-400 font-medium">Week 1</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-black mb-2 group-hover:underline">Week 1: Learning Journey – Design Thinking & Power BI</h3>
-                        <p class="text-gray-500 text-sm line-clamp-3 leading-relaxed">
-                            Exploring Instagram algorithms, Design Thinking with Dr. Meera, building Power BI dashboards, Prospect Theory, and creating personal portfolios in Antigravity IDE...
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-black">
-                        <span>Read Full Story →</span>
-                        <span class="text-gray-400 font-normal">Weekly Log</span>
-                    </div>
-                </a>
-
-                <!-- Week 2 Blog Post -->
-                <a href="#week2" class="bento-card flex flex-col justify-between cursor-pointer group">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full uppercase tracking-wider">Protosem</span>
-                            <span class="text-xs text-gray-400 font-medium">Week 2</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-black mb-2 group-hover:underline">Week 2: Learning Journey – Emotional Branding, Algorithms & App Prototyping</h3>
-                        <p class="text-gray-500 text-sm line-clamp-3 leading-relaxed">
-                            Tech talks on Emotional Branding with Nandhini S, 5S Japanese methodology with Brahma, Chatbots with Brindha, Algorithms with Gowri, UI Design with Jensy, and MIT App Inventor with Dakshana...
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-black">
-                        <span>Read Full Story →</span>
-                        <span class="text-gray-400 font-normal">Weekly Log</span>
-                    </div>
-                </a>
-
-                <!-- Week 3 Blog Post -->
-                <a href="#week3" class="bento-card flex flex-col justify-between cursor-pointer group">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full uppercase tracking-wider">Protosem</span>
-                            <span class="text-xs text-gray-400 font-medium">Week 3</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-black mb-2 group-hover:underline">Week 3: Learning Journey – Hardware, Tinkercad & Sensors to Sales</h3>
-                        <p class="text-gray-500 text-sm line-clamp-3 leading-relaxed">
-                            Computational hardware fundamentals with voltage, power & diodes, hands-on circuit simulation in Tinkercad, connecting sensors to business with "From Sensors to Sales", and product lifecycle with the Real PCD model...
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-black">
-                        <span>Read Full Story →</span>
-                        <span class="text-gray-400 font-normal">Weekly Log</span>
-                    </div>
-                </a>
-
-                <!-- Coming Soon Placeholder -->
-                <div class="bento-card flex flex-col min-h-[200px] bg-gray-50 border-dashed border-2 border-gray-300">
-                    <span class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3 block">Coming Soon</span>
-                    <h3 class="text-xl font-bold text-black mb-2">Week 4 Deep Dive</h3>
-                    <p class="text-gray-500 text-sm">Upcoming reflections and technical milestones will be published here!</p>
                 </div>
+                <span class="font-handwriting text-xl text-slate-500 hidden md:block">Reflective learnings ✍️</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Blog Post 0 -->
+                <a href="#week0" class="pastel-card card-lavender p-7 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="skill-tag tag-lavender !py-0.5 !px-2.5 !text-xs">ProtoSem</span>
+                            <span class="text-xs font-bold text-slate-500">Week 00</span>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-[#252329] mb-2 group-hover:text-[#6445B8] transition-colors">
+                            Week 0: A Week of Learning, Connecting & Creating
+                        </h3>
+                        <p class="text-sm text-[#66616B] line-clamp-3 leading-relaxed">
+                            Stone Paper Scissors, 16 Personalities, Marshmallow Challenge, Forge Launch with RAI CEO, and YEP founder masterclasses.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-3 border-t border-purple-200 flex items-center justify-between text-xs font-bold text-[#6445B8]">
+                        <span>Read Story →</span>
+                        <span>Orientation</span>
+                    </div>
+                </a>
+
+                <!-- Blog Post 1 -->
+                <a href="#week1" class="pastel-card card-blue p-7 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="skill-tag tag-blue !py-0.5 !px-2.5 !text-xs">ProtoSem</span>
+                            <span class="text-xs font-bold text-slate-500">Week 01</span>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-[#252329] mb-2 group-hover:text-[#1F699A] transition-colors">
+                            Week 1: Learning Journey – Design Thinking & Power BI
+                        </h3>
+                        <p class="text-sm text-[#66616B] line-clamp-3 leading-relaxed">
+                            Exploring Instagram algorithms, Design Thinking with Dr. Meera, building Power BI dashboards, and Prospect Theory.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-3 border-t border-sky-200 flex items-center justify-between text-xs font-bold text-[#1F699A]">
+                        <span>Read Story →</span>
+                        <span>Weekly Log</span>
+                    </div>
+                </a>
+
+                <!-- Blog Post 2 -->
+                <a href="#week2" class="pastel-card card-mint p-7 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="skill-tag tag-mint !py-0.5 !px-2.5 !text-xs">ProtoSem</span>
+                            <span class="text-xs font-bold text-slate-500">Week 02</span>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-[#252329] mb-2 group-hover:text-[#1F7348] transition-colors">
+                            Week 2: Emotional Branding, Algorithms & App Prototyping
+                        </h3>
+                        <p class="text-sm text-[#66616B] line-clamp-3 leading-relaxed">
+                            Tech talks on Emotional Branding, 5S Japanese methodology, chatbots, algorithms, UI Design, and MIT App Inventor.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-3 border-t border-emerald-200 flex items-center justify-between text-xs font-bold text-[#1F7348]">
+                        <span>Read Story →</span>
+                        <span>Weekly Log</span>
+                    </div>
+                </a>
+
             </div>
         </section>
 
-        <!-- Script for ProtoSem Data-Driven Render -->
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const protoSemWeeks = [
-                    {
-                        week: 0,
-                        phase: 1,
-                        slug: 'week0',
-                        title: 'A Week of Learning, Connecting & Creating',
-                        subtitle: 'Breaking the Ice, Teamwork & Launch',
-                        status: 'completed',
-                        summary: 'Stone Paper Scissors, 16 Personalities, Marshmallow Challenge, Forge Launch with RAI CEO, and YEP founder masterclasses.',
-                        url: '#week0'
-                    },
-                    {
-                        week: 1,
-                        phase: 1,
-                        slug: 'week1',
-                        title: 'Learning Journey',
-                        subtitle: 'Design Thinking, Power BI & Prospect Theory',
-                        status: 'completed',
-                        summary: 'Tech Talks on Instagram & Power BI, Design Thinking with Dr. Meera, SWOT Analysis, Prospect Theory, Antigravity IDE, Base44 & Guest Lectures.',
-                        url: '#week1'
-                    },
-                    {
-                        week: 2,
-                        phase: 1,
-                        slug: 'week2',
-                        title: 'Emotional Branding, Algorithms & Prototyping',
-                        subtitle: '5S Methodology, UI Design & MIT App Inventor',
-                        status: 'completed',
-                        summary: 'Tech talks on Emotional Branding, Chatbots, UI Design & Data Analytics, 5S Japanese methodology, problem identification, algorithms & MIT App Inventor.',
-                        url: '#week2'
-                    },
-                    {
-                        week: 3,
-                        phase: 1,
-                        slug: 'week3',
-                        title: 'Computational Hardware & Sensors to Sales',
-                        subtitle: 'Tinkercad Circuits & Real PCD Model',
-                        status: 'completed',
-                        summary: 'Computational hardware, voltage, diodes & transmitters, hands-on Tinkercad circuit simulation, "From Sensors to Sales" tech talk & Real PCD product lifecycle model.',
-                        url: '#week3'
-                    },
-                    ...Array.from({ length: 17 }, (_, i) => {
-                        const w = i + 4;
-                        return {
-                            week: w,
-                            phase: Math.ceil(w / 5),
-                            slug: `week-${w.toString().padStart(2, '0')}`,
-                            title: `WEEK ${w.toString().padStart(2, '0')}`,
-                            subtitle: 'COMING SOON',
-                            status: 'placeholder',
-                            summary: '',
-                            url: `#week-${w.toString().padStart(2, '0')}`
-                        };
-                    })
-                ];
 
-                const timelineContainer = document.getElementById('protosem-timeline');
-                const filterBtns = document.querySelectorAll('.phase-btn');
+        <!-- ==========================================
+             EXPERIENCE / EDUCATION TIMELINE
+             ========================================== -->
+        <section id="experience" class="scroll-mt-28 relative">
+            <a id="certifications"></a>
+            <a id="education"></a>
+            
+            <div class="flex items-baseline justify-between mb-8 pb-4 border-b border-black/10">
+                <div class="flex items-center gap-3">
+                    <span class="section-number">05</span>
+                    <div>
+                        <span class="section-heading-tag">Trajectory & Qualifications</span>
+                        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-[#252329] mt-1">Experience & Education</h2>
+                    </div>
+                </div>
+                <span class="font-handwriting text-xl text-slate-500 hidden md:block">Milestones ✦</span>
+            </div>
 
-                function renderCards(filterPhase) {
-                    timelineContainer.innerHTML = '';
+            <div class="editorial-timeline max-w-4xl mx-auto">
+                
+                <!-- Entry 1 -->
+                <div class="timeline-entry">
+                    <div class="timeline-marker !bg-[#C9B8FF]"></div>
+                    <div class="pastel-card card-lavender p-6">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span class="font-display font-bold text-lg text-[#252329]">Kumaraguru College of Liberal Arts and Science</span>
+                            <span class="skill-tag tag-lavender !py-0.5 !px-2.5 !text-xs">Currently Pursuing</span>
+                        </div>
+                        <h4 class="font-display font-bold text-base text-[#6445B8] mb-2">Bachelor of Commerce (B.Com)</h4>
+                        <p class="text-sm text-[#66616B] leading-relaxed">
+                            Developing a strong foundation in commerce, financial literacy, business operations, and organizational management.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Entry 2 -->
+                <div class="timeline-entry">
+                    <div class="timeline-marker !bg-[#BFE8D0]"></div>
+                    <div class="pastel-card card-mint p-6">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span class="font-display font-bold text-lg text-[#252329]">Prayathnam</span>
+                            <span class="skill-tag tag-mint !py-0.5 !px-2.5 !text-xs">Completed</span>
+                        </div>
+                        <h4 class="font-display font-bold text-base text-[#1F7348] mb-2">Bharathanatyam Degree</h4>
+                        <p class="text-sm text-[#66616B] leading-relaxed">
+                            Cultivated long-term commitment, cultural appreciation, expression, and rigorous mental and physical discipline.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Entry 3 -->
+                <div class="timeline-entry">
+                    <div class="timeline-marker !bg-[#B8DDF5]"></div>
+                    <div class="pastel-card card-blue p-6">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span class="font-display font-bold text-lg text-[#252329]">PRICE ProtoSem</span>
+                            <span class="skill-tag tag-blue !py-0.5 !px-2.5 !text-xs">2026 Trainee</span>
+                        </div>
+                        <h4 class="font-display font-bold text-base text-[#1F699A] mb-2">Innovation Engineer Trainee</h4>
+                        <p class="text-sm text-[#66616B] leading-relaxed">
+                            Selected for a 20-week industry-integrated innovation fellowship focused on retail analytics, AI, IoT prototyping, and entrepreneurship.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Entry 4 -->
+                <div class="timeline-entry">
+                    <div class="timeline-marker !bg-[#F8E7A6]"></div>
+                    <div class="pastel-card card-yellow p-6">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span class="font-display font-bold text-lg text-[#252329]">HP Life & NPTEL</span>
+                            <span class="skill-tag tag-yellow !py-0.5 !px-2.5 !text-xs">Certified</span>
+                        </div>
+                        <h4 class="font-display font-bold text-base text-[#8C7518] mb-2">Effective Leadership & Soft Skill Development</h4>
+                        <p class="text-sm text-[#66616B] leading-relaxed">
+                            Completed specialized modules in strategic decision frameworks, effective communication, and national financial literacy quiz round participation.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             CONTACT SECTION ("LET'S CREATE SOMETHING.")
+             ========================================== -->
+        <section id="contact" class="scroll-mt-28 relative">
+            
+            <div class="pastel-card card-charcoal p-10 sm:p-14 lg:p-16 relative overflow-hidden">
+                
+                <!-- Decorative Glow Blob -->
+                <div class="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-[#C9B8FF]/20 blur-3xl pointer-events-none"></div>
+
+                <div class="max-w-3xl space-y-6 relative z-10">
+                    <span class="inline-flex items-center gap-2 text-xs font-bold text-[#C9B8FF] uppercase tracking-widest bg-white/10 px-3 py-1 rounded-full">
+                        ✦ Get in Touch
+                    </span>
                     
-                    const filtered = filterPhase === 'all' 
-                        ? protoSemWeeks 
-                        : protoSemWeeks.filter(w => w.phase == filterPhase);
+                    <h2 class="font-display font-extrabold text-4xl sm:text-6xl text-[#FFF9F2] tracking-tight leading-[1.05]">
+                        LET'S CREATE SOMETHING.
+                    </h2>
+                    
+                    <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+                        Whether you want to discuss retail innovations, business opportunities, cultural collaborations, or innovation projects.
+                    </p>
 
-                    filtered.forEach((w, index) => {
-                        const isEven = index % 2 !== 0;
-                        const colClass = isEven ? 'md:col-start-2' : 'md:col-start-1 md:text-right';
-                        
-                        const dotPosition = isEven 
-                            ? 'left-[-32px] md:left-[-41px]' 
-                            : 'left-[-32px] md:left-auto md:right-[-41px]';
+                    <div class="pt-4 flex flex-wrap items-center gap-4">
+                        <a href="mailto:tharunikasundaresan@gmail.com" class="btn-editorial-primary !bg-[#FFF9F2] !text-[#252329] hover:!bg-white">
+                            <span>✉️ tharunikasundaresan@gmail.com</span>
+                            <span>↗</span>
+                        </a>
+                        <button onclick="copyEmailToClipboard()" class="skill-tag !bg-white/15 !text-white !border-white/20 hover:!bg-white/25 cursor-pointer">
+                            <span>📋 Copy Email</span>
+                        </button>
+                    </div>
 
-                        const isCompleted = w.status === 'completed';
+                    <div class="pt-6 border-t border-white/15 flex flex-wrap gap-4 text-sm font-semibold">
+                        <a href="https://www.linkedin.com/in/tharunika-sundaresan-612172375" target="_blank" rel="noopener" class="text-slate-300 hover:text-white flex items-center gap-2">
+                            <span>💼 LinkedIn</span> ↗
+                        </a>
+                        <a href="https://github.com/tharunikasundaresan-gif" target="_blank" rel="noopener" class="text-slate-300 hover:text-white flex items-center gap-2">
+                            <span>🐙 GitHub</span> ↗
+                        </a>
+                        <a href="resume.html" class="text-[#C9B8FF] hover:underline flex items-center gap-2">
+                            <span>📄 ATS Resume</span> ↗
+                        </a>
+                    </div>
+                </div>
 
-                        const cardHTML = `
-                            <div class="week-card ${colClass} relative group cursor-pointer" onclick="window.location.hash='${w.slug}'">
-                                <div class="absolute top-1/2 -translate-y-1/2 w-4 h-4 ${isCompleted ? 'bg-black border-4 border-emerald-400' : 'bg-white border-4 border-black'} rounded-full z-20 ${dotPosition} group-hover:scale-[1.5] transition-transform shadow-sm"></div>
-                                
-                                <div class="bg-white border ${isCompleted ? 'border-black ring-1 ring-black/5 shadow-md' : 'border-gray-200'} rounded-2xl p-6 shadow-sm group-hover:bg-gray-50 flex flex-col justify-center min-h-[130px] transition-all">
-                                    <div class="flex items-center justify-between ${isEven ? 'flex-row' : 'md:flex-row-reverse flex-row'} mb-2">
-                                        <span class="text-3xl font-extrabold ${isCompleted ? 'text-black' : 'text-gray-200'} group-hover:text-black transition-colors">
-                                            ${w.week.toString().padStart(2, '0')}
-                                        </span>
-                                        <div class="flex items-center gap-1.5">
-                                            ${isCompleted ? '<span class="text-[10px] font-bold px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded-full uppercase tracking-wider">Completed</span>' : ''}
-                                            <span class="text-xs font-bold px-2 py-1 bg-gray-100 rounded text-gray-500 uppercase tracking-wider">
-                                                Phase 0${w.phase}
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <h4 class="text-lg md:text-xl font-bold text-black mb-1">
-                                        ${isCompleted ? 'WEEK ' + w.week.toString().padStart(2, '0') + ' — ' + w.title : w.title}
-                                    </h4>
-                                    ${isCompleted ? `
-                                        <p class="text-xs text-gray-500 mb-3 line-clamp-2 ${isEven ? '' : 'md:text-right'}">${w.summary}</p>
-                                        <div class="flex items-center gap-1 text-xs font-bold text-black uppercase tracking-wider ${isEven ? '' : 'md:justify-end'} group-hover:underline">
-                                            <span>View Details</span>
-                                            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                            </svg>
-                                        </div>
-                                    ` : `
-                                        <p class="text-sm font-semibold text-gray-400 tracking-wide flex items-center gap-1 ${isEven ? '' : 'md:justify-end'}">
-                                            COMING SOON
-                                            <svg class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity ${isEven ? '-translate-x-2' : 'translate-x-2 md:-translate-x-2'} group-hover:translate-x-0 transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                            </svg>
-                                        </p>
-                                    `}
-                                </div>
-                            </div>
-                        `;
-                        timelineContainer.insertAdjacentHTML('beforeend', cardHTML);
-                    });
-                }
+            </div>
+        </section>
 
-                renderCards('all');
 
-                filterBtns.forEach(btn => {
-                    btn.addEventListener('click', (e) => {
-                        filterBtns.forEach(b => {
-                            b.classList.remove('active', 'text-white', 'bg-black');
-                            b.classList.add('text-gray-500', 'hover:text-black');
-                        });
-                        e.target.classList.add('active', 'text-white', 'bg-black');
-                        e.target.classList.remove('text-gray-500', 'hover:text-black');
-                        
-                        renderCards(e.target.dataset.phase);
-                    });
-                });
-            });
-        </script>
-        
-        <footer class="text-center text-gray-400 text-sm py-12">
-            Designed with ♥ by PortfolioWizard
+        <!-- ==========================================
+             MINIMAL FOOTER
+             ========================================== -->
+        <footer class="pt-10 pb-6 border-t border-black/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-semibold text-[#66616B]">
+            <p>© 2026 Tharunika V.S — All Rights Reserved.</p>
+            <div class="flex items-center gap-4">
+                <a href="#hero" class="hover:text-[#252329]">Back to Top ↑</a>
+                <span>•</span>
+                <a href="resume.html" class="hover:text-[#252329]">Resume</a>
+                <span>•</span>
+                <a href="week-00.html" class="hover:text-[#252329]">Week 0</a>
+                <span>•</span>
+                <a href="week-01.html" class="hover:text-[#252329]">Week 1</a>
+                <span>•</span>
+                <a href="week-02.html" class="hover:text-[#252329]">Week 2</a>
+                <span>•</span>
+                <a href="week-03.html" class="hover:text-[#252329]">Week 3</a>
+            </div>
         </footer>
-    </div>
+
+    </main>
+
+    <!-- Interactive Script -->
+    <script src="script.js"></script>
 </body>
 </html>
