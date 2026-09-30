@@ -66,8 +66,23 @@ document.addEventListener('DOMContentLoaded', () => {
             url: 'week-03.html',
             anchor: '#week3'
         },
-        ...Array.from({ length: 17 }, (_, i) => {
-            const w = i + 4;
+        {
+            week: 4,
+            phase: 1,
+            slug: 'week4',
+            title: 'Arduino UNO, IoT Systems & Hardware Protocols',
+            subtitle: 'Lucky Dangle, Chrome Extensions, UART/I2C/SPI & Sensors',
+            status: 'completed',
+            phaseName: 'Phase 01',
+            tag: 'Hardware & IoT',
+            colorClass: 'card-peach',
+            badgeClass: 'tag-peach',
+            summary: 'Computational hardware with Arduino UNO, Lucky Dangle & Chrome extensions, sensors & actuators with UART/I2C/SPI protocols, MPU6050 & SG90 servo motor, and IoT connected systems.',
+            url: 'week-04.html',
+            anchor: '#week4'
+        },
+        ...Array.from({ length: 16 }, (_, i) => {
+            const w = i + 5;
             const phase = Math.ceil(w / 5);
             const colorClasses = ['card-lavender', 'card-pink', 'card-blue', 'card-mint', 'card-yellow', 'card-peach'];
             const badgeClasses = ['tag-lavender', 'tag-pink', 'tag-blue', 'tag-mint', 'tag-yellow', 'tag-peach'];
