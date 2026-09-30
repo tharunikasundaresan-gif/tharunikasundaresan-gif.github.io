@@ -81,8 +81,23 @@ document.addEventListener('DOMContentLoaded', () => {
             url: 'week-04.html',
             anchor: '#week4'
         },
-        ...Array.from({ length: 16 }, (_, i) => {
-            const w = i + 5;
+        {
+            week: 5,
+            phase: 1,
+            slug: 'week5',
+            title: 'Mind Psychology, Figma UI & AI Hallucinations',
+            subtitle: 'GEMS Activity, Problem Validation Surveys & AI Limitations',
+            status: 'completed',
+            phaseName: 'Phase 01',
+            tag: 'Research & UI/UX',
+            colorClass: 'card-pink',
+            badgeClass: 'tag-pink',
+            summary: 'Tech talks on human mind psychology & GEMS decision activity, online vs in-store pickup price comparison website, problem identification & user survey validation, Figma app design, and why AI hallucinates.',
+            url: 'week-05.html',
+            anchor: '#week5'
+        },
+        ...Array.from({ length: 15 }, (_, i) => {
+            const w = i + 6;
             const phase = Math.ceil(w / 5);
             const colorClasses = ['card-lavender', 'card-pink', 'card-blue', 'card-mint', 'card-yellow', 'card-peach'];
             const badgeClasses = ['tag-lavender', 'tag-pink', 'tag-blue', 'tag-mint', 'tag-yellow', 'tag-peach'];
