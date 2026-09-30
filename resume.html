@@ -3,166 +3,373 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tharunika V.S - Resume</title>
+    <title>Tharunika V.S — Resume | ATS & Print-Ready</title>
+    <meta name="description" content="Official Resume of Tharunika V.S — B.Com student, Innovation Engineer Trainee, and Bharathanatyam graduate.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* Base Styles - ATS Friendly & Clean */
+        :root {
+            --bg-cream: #FFF9F2;
+            --bg-paper: #FFFFFF;
+            --text-primary: #252329;
+            --text-secondary: #66616B;
+            --pastel-lavender: #C9B8FF;
+            --pastel-lavender-dark: #6445B8;
+            --border-card: rgba(45, 41, 51, 0.16);
+            --card-shadow: 4px 5px 0 rgba(45, 41, 51, 0.08);
+            --radius-pill: 9999px;
+            --radius-lg: 18px;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            color: #111;
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-primary);
             line-height: 1.6;
-            max-width: 800px;
+            padding: 90px 20px 60px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Top Web Bar */
+        .top-nav {
+            position: fixed;
+            top: 16px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            z-index: 100;
+            padding: 0 15px;
+        }
+
+        .top-nav-inner {
+            background: rgba(255, 252, 247, 0.95);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-pill);
+            padding: 6px 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05), 2px 3px 0 rgba(45, 41, 51, 0.04);
+        }
+
+        .nav-btn {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--text-secondary);
+            padding: 6px 14px;
+            border-radius: var(--radius-pill);
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-btn:hover {
+            color: var(--text-primary);
+            background: rgba(201, 184, 255, 0.3);
+        }
+
+        .nav-btn-primary {
+            background: var(--text-primary);
+            color: #FFF9F2 !important;
+            border: 1px solid var(--text-primary);
+            box-shadow: 2px 2px 0 rgba(45, 41, 51, 0.15);
+        }
+
+        .nav-btn-primary:hover {
+            background: #3D3944;
+        }
+
+        /* Resume Document Container */
+        .resume-sheet {
+            max-width: 820px;
             margin: 0 auto;
-            padding: 40px 20px;
-            background: #fff;
+            background: #FFFFFF;
+            padding: 50px 60px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-card);
+            box-shadow: var(--card-shadow);
         }
-        header {
+
+        .resume-header {
             text-align: center;
-            border-bottom: 2px solid #000;
-            padding-bottom: 20px;
-            margin-bottom: 25px;
+            border-bottom: 2px solid rgba(100, 69, 184, 0.3);
+            padding-bottom: 22px;
+            margin-bottom: 28px;
         }
-        h1 {
-            margin: 0 0 10px 0;
-            font-size: 2.5em;
-            color: #000;
-            letter-spacing: -0.5px;
+
+        .resume-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            letter-spacing: -0.03em;
+            margin-bottom: 4px;
         }
+
+        .resume-tagline {
+            font-size: 1.05rem;
+            color: var(--pastel-lavender-dark);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            font-size: 0.95em;
-            color: #333;
+            gap: 14px;
+            font-size: 0.92rem;
+            color: var(--text-secondary);
             flex-wrap: wrap;
+            font-weight: 500;
         }
+
         .contact-info a {
-            color: #000;
+            color: var(--text-primary);
             text-decoration: none;
+            transition: color 0.2s;
         }
+
         .contact-info a:hover {
+            color: var(--pastel-lavender-dark);
             text-decoration: underline;
         }
-        h2 {
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 5px;
-            color: #000;
-            margin-top: 30px;
-            font-size: 1.4em;
+
+        .resume-section {
+            margin-bottom: 26px;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--text-primary);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.08em;
+            border-bottom: 1.5px solid rgba(100, 69, 184, 0.25);
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
+
+        .section-title::before {
+            content: '✦';
+            color: var(--pastel-lavender-dark);
+            font-size: 0.9em;
+        }
+
         .section-item {
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
+
         .section-item-header {
             display: flex;
             justify-content: space-between;
-            font-weight: bold;
-            font-size: 1.1em;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--text-primary);
             margin-bottom: 2px;
         }
+
         .section-item-subheader {
-            font-style: italic;
-            color: #444;
-            margin-bottom: 8px;
-        }
-        ul {
-            margin-top: 5px;
-            padding-left: 20px;
-        }
-        li {
+            font-weight: 600;
+            color: var(--pastel-lavender-dark);
+            font-size: 0.92rem;
             margin-bottom: 6px;
         }
-        
-        /* Print Styles as per requirements */
-        @media print { 
-            @page { margin: 15mm; } 
-            header, footer { display: none; }
-            body { padding: 0; max-width: 100%; font-size: 11pt; }
-            h2 { margin-top: 20px; }
-            /* Custom Header to replace the 'display: none' main header for ATS structure in print if needed, 
-               but per exact instructions: header, footer { display: none; } */
+
+        .resume-sheet ul {
+            padding-left: 20px;
+            margin-top: 5px;
         }
-        
-        /* Utility class to show a print-specific name block since the semantic <header> is hidden */
-        .print-only-header {
-            display: none;
-            text-align: center;
-            border-bottom: 2px solid #000;
-            padding-bottom: 15px;
-            margin-bottom: 20px;
+
+        .resume-sheet li {
+            margin-bottom: 5px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
+
+        .resume-sheet li strong {
+            color: var(--text-primary);
+        }
+
+        .resume-sheet p {
+            color: var(--text-secondary);
+            font-size: 0.97rem;
+            line-height: 1.65;
+        }
+
+        /* Strict ATS Print Rules */
         @media print {
-            .print-only-header { display: block; }
+            @page {
+                margin: 15mm;
+            }
+            body {
+                padding: 0 !important;
+                background: #FFFFFF !important;
+                color: #000000 !important;
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+                font-size: 11pt !important;
+            }
+            .top-nav, .no-print {
+                display: none !important;
+            }
+            .resume-sheet {
+                box-shadow: none !important;
+                border: none !important;
+                padding: 0 !important;
+                max-width: 100% !important;
+            }
+            .resume-header {
+                border-bottom: 2px solid #000 !important;
+                padding-bottom: 15px !important;
+                margin-bottom: 20px !important;
+            }
+            .resume-name {
+                color: #000 !important;
+                font-size: 24pt !important;
+            }
+            .section-title {
+                color: #000 !important;
+                border-bottom: 1px solid #000 !important;
+                font-size: 12pt !important;
+            }
+            .section-title::before {
+                display: none !important;
+            }
+            .section-item-subheader {
+                color: #333 !important;
+                font-style: italic !important;
+            }
+            .resume-sheet li, .resume-sheet p {
+                color: #111 !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .resume-sheet {
+                padding: 30px 20px;
+            }
+            .resume-name {
+                font-size: 2rem;
+            }
+            .section-item-header {
+                flex-direction: column;
+                gap: 2px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Web Header (Hidden on Print as per requirement) -->
-    <header>
-        <h1>Tharunika V.S</h1>
-        <div class="contact-info">
-            <span><a href="mailto:tharunikasundaresan@gmail.com">tharunikasundaresan@gmail.com</a></span> |
-            <span><a href="https://www.linkedin.com/in/tharunika-sundaresan-612172375">LinkedIn</a></span> |
-            <span><a href="https://github.com/tharunikasundaresan-gif">GitHub</a></span>
+    <!-- Web Navigation Bar -->
+    <nav class="top-nav no-print">
+        <div class="top-nav-inner">
+            <a href="index.html" class="nav-btn">
+                <span>←</span> Back to Portfolio
+            </a>
+            <button onclick="window.print()" class="nav-btn nav-btn-primary">
+                <span>🖨️</span> Print / Save PDF
+            </button>
+            <a href="mailto:tharunikasundaresan@gmail.com" class="nav-btn">
+                <span>✉️</span> Connect
+            </a>
         </div>
-    </header>
+    </nav>
 
-    <!-- Print Only Header (Since <header> tag is hidden on print, we need to show the name somehow!) -->
-    <div class="print-only-header">
-        <h1 style="margin: 0; font-size: 24pt;">Tharunika V.S</h1>
-        <p style="margin: 5px 0 0 0;">tharunikasundaresan@gmail.com | LinkedIn: tharunika-sundaresan-612172375 | GitHub: tharunikasundaresan-gif</p>
-    </div>
-
-    <section>
-        <h2>Professional Summary</h2>
-        <p>A highly motivated Bachelor of Commerce student with a solid foundation in business principles, financial literacy, and effective leadership. Brings exceptional dedication, time management, and rigorous discipline cultivated through a completed Bharathanatyam degree. Eager to leverage soft skills and organizational training to contribute to a dynamic professional environment.</p>
-    </section>
-
-    <section>
-        <h2>Education</h2>
-        <div class="section-item">
-            <div class="section-item-header">
-                <span>Kumaraguru College of Liberal Arts and Science</span>
-                <span>Currently Pursuing</span>
+    <!-- Resume Sheet Document -->
+    <main class="resume-sheet">
+        
+        <!-- Header -->
+        <header class="resume-header">
+            <h1 class="resume-name">Tharunika V.S</h1>
+            <p class="resume-tagline no-print">B.Com Student • Aspiring Leader • PRICE ProtoSem Innovation Trainee</p>
+            <div class="contact-info">
+                <span><a href="mailto:tharunikasundaresan@gmail.com">tharunikasundaresan@gmail.com</a></span> •
+                <span><a href="https://www.linkedin.com/in/tharunika-sundaresan-612172375" target="_blank" rel="noopener">LinkedIn</a></span> •
+                <span><a href="https://github.com/tharunikasundaresan-gif" target="_blank" rel="noopener">GitHub</a></span> •
+                <span>Coimbatore, India</span>
             </div>
-            <div class="section-item-subheader">Bachelor of Commerce (B.Com)</div>
-            <ul>
-                <li>Developing a strong foundation in commerce, finance, and business operations.</li>
-            </ul>
-        </div>
-        <div class="section-item">
-            <div class="section-item-header">
-                <span>Prayathnam</span>
-                <span>Completed</span>
+        </header>
+
+        <!-- Professional Summary -->
+        <section class="resume-section">
+            <h2 class="section-title">Professional Summary</h2>
+            <p>
+                A highly motivated Bachelor of Commerce student with a solid foundation in business principles, financial literacy, and effective leadership. Brings exceptional dedication, time management, and rigorous discipline cultivated through a completed Bharathanatyam degree. Eager to leverage soft skills and organizational training to contribute to a dynamic professional environment.
+            </p>
+        </section>
+
+        <!-- Education -->
+        <section class="resume-section">
+            <h2 class="section-title">Education</h2>
+            <div class="section-item">
+                <div class="section-item-header">
+                    <span>Kumaraguru College of Liberal Arts and Science</span>
+                    <span>Currently Pursuing</span>
+                </div>
+                <div class="section-item-subheader">Bachelor of Commerce (B.Com)</div>
+                <ul>
+                    <li>Developing a strong foundation in commerce, finance, and business operations.</li>
+                </ul>
             </div>
-            <div class="section-item-subheader">Bharathanatyam Degree</div>
-            <ul>
-                <li>Demonstrated long-term commitment, cultural appreciation, and rigorous discipline.</li>
-            </ul>
-        </div>
-    </section>
+            <div class="section-item">
+                <div class="section-item-header">
+                    <span>Prayathnam</span>
+                    <span>Completed</span>
+                </div>
+                <div class="section-item-subheader">Bharathanatyam Degree</div>
+                <ul>
+                    <li>Demonstrated long-term commitment, cultural appreciation, and rigorous discipline.</li>
+                </ul>
+            </div>
+        </section>
 
-    <section>
-        <h2>Certifications & Extracurriculars</h2>
-        <div class="section-item">
-            <ul>
-                <li><strong>Soft Skill Development (NPTEL):</strong> Completed examination focusing on effective communication, teamwork, and interpersonal dynamics.</li>
-                <li><strong>Effective Leadership (HP Life):</strong> Completed online course emphasizing leadership frameworks, decision-making, and strategic thinking.</li>
-                <li><strong>National Financial Literacy Quiz:</strong> Successfully participated in the online round, demonstrating foundational financial and economic knowledge.</li>
-            </ul>
-        </div>
-    </section>
+        <!-- Certifications & Extracurriculars -->
+        <section class="resume-section">
+            <h2 class="section-title">Certifications & Extracurriculars</h2>
+            <div class="section-item">
+                <ul>
+                    <li><strong>Soft Skill Development (NPTEL):</strong> Completed examination focusing on effective communication, teamwork, and interpersonal dynamics.</li>
+                    <li><strong>Effective Leadership (HP Life):</strong> Completed online course emphasizing leadership frameworks, decision-making, and strategic thinking.</li>
+                    <li><strong>National Financial Literacy Quiz:</strong> Successfully participated in the online round, demonstrating foundational financial and economic knowledge.</li>
+                    <li><strong>PRICE ProtoSem Innovation Trainee:</strong> Selected for 20-week industry-integrated innovation fellowship focusing on retail analytics, AI, IoT prototyping, and entrepreneurship.</li>
+                </ul>
+            </div>
+        </section>
 
-    <section>
-        <h2>Core Competencies</h2>
-        <ul>
-            <li><strong>Business & Finance:</strong> Financial Literacy, Commerce Fundamentals</li>
-            <li><strong>Leadership & Interpersonal:</strong> Effective Leadership, Team Collaboration, Soft Skills</li>
-            <li><strong>Personal Attributes:</strong> High Discipline, Time Management, Long-term Dedication</li>
-        </ul>
-    </section>
+        <!-- Core Competencies -->
+        <section class="resume-section">
+            <h2 class="section-title">Core Competencies</h2>
+            <ul>
+                <li><strong>Business & Finance:</strong> Financial Literacy, Commerce Fundamentals, Market Analysis, SWOT Frameworks</li>
+                <li><strong>Leadership & Interpersonal:</strong> Effective Leadership, Team Collaboration, Soft Skills, Design Thinking</li>
+                <li><strong>Personal Attributes:</strong> High Discipline, Time Management, Long-term Dedication, Cultural Artistry</li>
+            </ul>
+        </section>
+
+    </main>
 
 </body>
 </html>
